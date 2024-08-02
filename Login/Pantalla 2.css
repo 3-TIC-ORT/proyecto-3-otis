@@ -1,0 +1,10 @@
+.explicacioncxxc{
+  display: flex;
+  justify-content: center;
+}
+.explicacion{
+  width: 500px;
+    border: 2px black solid ;
+display: flex;
+justify-content:  center;
+}
