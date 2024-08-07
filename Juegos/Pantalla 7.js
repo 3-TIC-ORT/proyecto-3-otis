@@ -39,8 +39,8 @@ setTimeout(() => {
             bloqueador2 = 0
         }
     }
-    }, 3000*laotra+3000);
-    await retrasar(3000*laotra+3000);
+    }, 750*(numero+1)+2500);
+    await retrasar(750*(numero+1)+2500);
     seleccionados = []
 
 
