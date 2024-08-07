@@ -34,6 +34,7 @@ setTimeout(() => {
             bloqueador = 1
             document.getElementById("mensajemalo").innerHTML = "¡Oh no!¡Perdiste!¡Volvamos a empezar!"
             bloqueador2 = 0
+            document.getElementById("Puntuacion").innerHTML = `Puntuación: ${numero}`
         } else{
     document.getElementById("Puntuacion").innerHTML = `Puntuación: ${numero+1}`
         }
