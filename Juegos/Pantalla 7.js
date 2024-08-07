@@ -14,7 +14,6 @@ async function juego(){
 for(let numero = 0; numero<kkk; numero++){
 orden.push(document.getElementById(`boton${Math.floor(4*Math.random())}`));
 for(let demostración = 0; demostración<= numero; demostración++){
-  document.getElementById("todo").style.backgroundColor = 'rgb(250, 228, 103)';
   document.getElementById("mensajemalo").innerHTML = "Observa y acuérdate..."
   bloqueador = 1
     orden[demostración].style.filter = "brightness(250%)";
@@ -25,12 +24,10 @@ for(let demostración = 0; demostración<= numero; demostración++){
     bloqueador = 0
 }
 document.getElementById("mensajemalo").innerHTML = "Ahora copia lo que viste."
-document.getElementById("todo").style.backgroundColor = 'rgb(130, 204, 238)';
 let laotra = 0
 setTimeout(() => {
     for(laotra = 0; laotra<= numero; laotra++){
         if(seleccionados[laotra] != orden[laotra] || seleccionados.length != orden.length){
-          document.getElementById("todo").style.backgroundColor = 'rgb(255, 85, 85)';
             kkk = 0;
             orden = [];
             bloqueador = 1
@@ -41,6 +38,7 @@ setTimeout(() => {
     }, 750*(numero+1)+2500);
     await retrasar(750*(numero+1)+2500);
     seleccionados = []
+    document.getElementById("Puntuacion").innerHTML = `Puntuación: ${numero+1}`
 }
 }
 }
