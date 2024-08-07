@@ -33,12 +33,13 @@ setTimeout(() => {
             bloqueador = 1
             document.getElementById("mensajemalo").innerHTML = "¡Oh no!¡Perdiste!¡Volvamos a empezar!"
             bloqueador2 = 0
+        } else{
+    document.getElementById("Puntuacion").innerHTML = `Puntuación: ${numero+1}`
         }
     }
     }, 750*(numero+1)+2500);
     await retrasar(750*(numero+1)+2500);
     seleccionados = []
-    document.getElementById("Puntuacion").innerHTML = `Puntuación: ${numero+1}`
 }
 }
 }
