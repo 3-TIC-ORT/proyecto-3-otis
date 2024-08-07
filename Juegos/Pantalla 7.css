@@ -1,31 +1,31 @@
 .todo{
 display: flex;
 flex-direction: row;
-background-color: rgb(250, 228, 103);
+background-color: rgb(230, 208, 83);
 }
 
 .rojo{
     width: 300px;
     height: 300px;
-    background-color: #990000;
+    background-color: #850000;
     border-width: 0px;
 }
 .azul{
     width: 300px;
     height: 300px;
-    background-color: #000099;
+    background-color: #000085;
     border-width: 0px;
 }
 .amarillo{
     width: 300px;
     height: 300px;
-    background-color: #999900;
+    background-color: #858500;
     border-width: 0px;
 }
 .verde{
     width: 300px;
     height: 300px;
-    background-color: #009900;
+    background-color: #008500;
     border-width: 0px;
 }
 

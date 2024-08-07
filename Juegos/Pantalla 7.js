@@ -17,12 +17,11 @@ for(let demostración = 0; demostración<= numero; demostración++){
   document.getElementById("todo").style.backgroundColor = 'rgb(250, 228, 103)';
   document.getElementById("mensajemalo").innerHTML = "Observa y acuérdate..."
   bloqueador = 1
-    orden[demostración].style.filter = "brightness(200%)";
+    orden[demostración].style.filter = "brightness(250%)";
     setTimeout(() => {
     orden[demostración].style.filter = "brightness(100%)";
     }, 500);
     await retrasar(1000);
-    console.log(orden[demostración])
     bloqueador = 0
 }
 document.getElementById("mensajemalo").innerHTML = "Ahora copia lo que viste."
@@ -42,9 +41,6 @@ setTimeout(() => {
     }, 750*(numero+1)+2500);
     await retrasar(750*(numero+1)+2500);
     seleccionados = []
-
-
-console.log(numero+1)
 }
 }
 }
@@ -52,7 +48,7 @@ console.log(numero+1)
 
 function rojo(){
   if(bloqueador === 0){
-    document.getElementById("boton0").style.filter = "brightness(200%)";
+    document.getElementById("boton0").style.filter = "brightness(250%)";
     setTimeout(() => {
     document.getElementById("boton0").style.filter = "brightness(100%)";
     }, 500);
@@ -61,7 +57,7 @@ function rojo(){
 }
 function azul(){
   if(bloqueador === 0){
-    document.getElementById("boton1").style.filter = "brightness(200%)";
+    document.getElementById("boton1").style.filter = "brightness(250%)";
     setTimeout(() => {
     document.getElementById("boton1").style.filter = "brightness(100%)";
     }, 500);
@@ -70,7 +66,7 @@ function azul(){
   }
   function amarillo(){
     if(bloqueador === 0){
-    document.getElementById("boton2").style.filter = "brightness(200%)";
+    document.getElementById("boton2").style.filter = "brightness(250%)";
     setTimeout(() => {
     document.getElementById("boton2").style.filter = "brightness(100%)";
     }, 500);
@@ -79,7 +75,7 @@ function azul(){
   }
   function verde(){
     if(bloqueador === 0){
-    document.getElementById("boton3").style.filter = "brightness(200%)";
+    document.getElementById("boton3").style.filter = "brightness(250%)";
     setTimeout(() => {
     document.getElementById("boton3").style.filter = "brightness(100%)";
     }, 500);
