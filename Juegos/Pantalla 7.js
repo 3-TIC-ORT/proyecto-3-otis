@@ -9,6 +9,7 @@ function retrasar(ms) {
 
 async function juego(){
   if(bloqueador2 === 0){
+    document.getElementById("Puntuacion").innerHTML = "Puntuación: 0"
     bloqueador2 = 1;
     kkk = 999;
 for(let numero = 0; numero<kkk; numero++){
