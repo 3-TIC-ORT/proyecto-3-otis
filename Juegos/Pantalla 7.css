@@ -1,30 +1,68 @@
+.arriba{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0px;
+    padding-top: 0px;
+    align-items: flex-start;
+}
+.sub-arriba{
+    margin-top: -10px;
+    padding-top: -10px;
+    margin-right: -10px;
+    display: flex;
+    flex-direction: row;
+}
+.otislogo{
+    width: 100px;
+    height: 80px;
+}
+.confboton{
+    height: 80px;
+    width: 400px;
+    background-color: #618fbf;
+    display: flex;
+    flex-direction: row;
+}
+.configuracion{
+ height: 70px;
+}
+.perfboton{
+    height: 80px;
+    width: 300px;
+    background-color: #618fbf;
+    display: flex;
+    flex-direction: row;
+}
 .todo{
 display: flex;
 flex-direction: row;
-background-color: rgb(230, 208, 83);
+flex-wrap: wrap;
+background-color: #618fbf;
 }
 
 .rojo{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background-color: #850000;
     border-width: 0px;
 }
 .azul{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background-color: #000085;
     border-width: 0px;
 }
 .amarillo{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background-color: #858500;
     border-width: 0px;
 }
 .verde{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background-color: #008500;
     border-width: 0px;
 }
