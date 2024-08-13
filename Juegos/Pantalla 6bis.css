@@ -47,6 +47,13 @@ flex-direction: row;
 flex-wrap: wrap;
 background-color: #618fbf;
 height: 720px;
+align-content: flex-start;
+}
+.otisybotones{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .globo{
     width: 368px;
@@ -71,8 +78,4 @@ width: 195px;
 }
 .dialogo{
     font-size: 20px;
-}
-.menuprinc{
-    display: flex;
-    align-self: flex-start;
 }
