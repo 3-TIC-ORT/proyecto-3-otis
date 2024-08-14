@@ -1,6 +1,6 @@
 let orden = [];
 let seleccionados = [];
-let kkk = 999;
+let kkk = 1;
 let bloqueador = 1
 let bloqueador2 = 0
 function retrasar(ms) {
@@ -11,7 +11,7 @@ async function juego(){
   if(bloqueador2 === 0){
     document.getElementById("Puntuacion").innerHTML = "Puntuación: 0"
     bloqueador2 = 1;
-    kkk = 999;
+    kkk = 2;
 for(let numero = 0; numero<kkk; numero++){
 orden.push(document.getElementById(`boton${Math.floor(4*Math.random())}`));
 for(let demostración = 0; demostración<= numero; demostración++){
@@ -42,6 +42,7 @@ setTimeout(() => {
     }, 750*(numero+1)+2500);
     await retrasar(750*(numero+1)+2500);
     seleccionados = []
+    kkk++
 }
 }
 }
