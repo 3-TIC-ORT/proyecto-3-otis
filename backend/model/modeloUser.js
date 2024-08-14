@@ -1,11 +1,12 @@
-import { sequelize } from "../DB/DBcontroller";
+import { sequelize } from "../DB/DBcontroller.js";
 import  Sequelize  from "sequelize";
 
 const User = sequelize.define("Users", {
-    id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+    idusers: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        allowNull: false,
         autoIncrement: true,
-        primaryKey: true
     },
     usuario: {
         type: Sequelize.STRING(25),
@@ -16,26 +17,30 @@ const User = sequelize.define("Users", {
         type: Sequelize.STRING(25),
         allowNull: false
     },
-    audiosSubidos: {
+        /*audiosSubidos: {
         type: Sequelize.BLOB,
         allowNull: true
-    },
-    videosSubidos: {
+        },
+        videosSubidos: {
         type: Sequelize.BLOB,
         allowNull: true
-    },
-    imagenesSubidas: {
+        },
+        imagenesSubidas: {
         type: Sequelize.BLOB,
         allowNull: true
-    },
-    gusta: {
+        },
+        gusta: {
         type: Sequelize.BLOB,
         allowNull: true
-    },
-    noGusta: {
+        },
+        noGusta: {
         type: Sequelize.BLOB,
         allowNull: true
 
-    },
-
+        },
+        */
+}, {
+    timestamps: false,
 });
+
+export { User };
