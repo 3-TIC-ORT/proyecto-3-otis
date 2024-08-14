@@ -9,6 +9,7 @@
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-bottom-style: solid;
+    margin-bottom: 10px;
 }
 .sub-arriba{
     margin-top: -10px;
@@ -78,3 +79,12 @@ background-color: #618fbf;
     justify-content: center;
     align-items: center;
 }
+
+.perfil{
+    width: 100px;
+}
+
+
+.tdn{
+    text-decoration: none;
+    }
