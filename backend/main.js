@@ -3,7 +3,6 @@ import  argon2 from "argon2";
 import { User } from "./model/modeloUser.js";
 import { hash } from "argon2";
 
-// learn exxpress.JS in 15 minutes!
 
 const app = Express()
 
@@ -18,15 +17,13 @@ app.post("/enviar_datos", async (req, res) => { // endpoint
 
 app.get("/enviar_datos", async (req, res) => { // endpoint
 
-    const usuarioRegistrado = "ouchurus"
-    const contraseñaRegistrada = "papaerpapapre"
+    const usuarioRegistrado = "ouchurus" // usuario definido
+    const contraseñaRegistrada = "papaerpapapre" // contraseña definida
 
     const user = await User.create({contraseña: contraseñaRegistrada, usuario: usuarioRegistrado})
     //  user =  lo que ingrese la persona en el cuadro de texto
 
-    let isabella = "isabella"
-    encriptar(isabella)
-
+ 
     res.send("hola")
 })
 
