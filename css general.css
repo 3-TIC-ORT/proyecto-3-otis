@@ -1,0 +1,47 @@
+.todo{
+    background-color: #618fbf;
+    height: 90vh
+}
+.arriba{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0px;
+    padding-top: 0px;
+    align-items: flex-start;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
+.sub-arriba{
+    margin-top: -10px;
+    padding-top: -10px;
+    margin-right: -10px;
+    display: flex;
+    flex-direction: row;
+}
+.otislogo{
+    width: 80px;
+    height: 80px;
+}
+.confboton{
+    height: 80px;
+    width: 400px;
+    background-color: #618fbf;
+    display: flex;
+    flex-direction: row;
+    border-bottom-width: 0px;
+}
+.configuracion{
+ height: 70px;
+}
+.perfboton{
+    height: 80px;
+    width: 300px;
+    background-color: #618fbf;
+    display: flex;
+    flex-direction: row;
+    border-bottom-width: 0px;
+}
