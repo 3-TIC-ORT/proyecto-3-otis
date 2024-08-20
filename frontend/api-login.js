@@ -1,12 +1,10 @@
 const usuario = document.getElementById("usuario")
 const contraseña = document.getElementById("contraseña")
 
-
 const boton = document.getElementById("boton")
 const botondequenoaparezca = document.getElementById("boton").value
 
-
-boton.addEventListener("click", sendData())
+boton.addEventListener("click", sendData)
 
 async function sendData() {
 

@@ -7,7 +7,9 @@ import { hash } from "argon2";
 const app = Express()
 
 app.post("/enviar_datos", async (req, res) => { // endpoint
+    
     const datosUser = req.body
+
     const usuarioRegistrado = datosUser.usuario
     const contraseñaRegistrada = datosUser.contraseña
 
