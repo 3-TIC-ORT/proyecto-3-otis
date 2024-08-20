@@ -1,4 +1,4 @@
-.todo{
+body{
     background-color: #618fbf;
     height: 90vh
 }
@@ -44,4 +44,10 @@
     display: flex;
     flex-direction: row;
     border-bottom-width: 0px;
+}
+.perfil{
+    height: 70px;
+}
+.tdn{
+    text-decoration: none;
 }
