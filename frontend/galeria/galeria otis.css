@@ -1,0 +1,36 @@
+.imagenes{
+    width: 10%;
+}
+.megustaono{
+    width: 3%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nomegustaono:hover{
+    border-color: #a1cfff;
+}
+.corazonono{
+    width: 70%;
+}
+.dialogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+.globodetexto{
+    width: 250px;
+}
+.texto{
+    position: absolute;
+    width: 220px;
+}
+.dislike{
+    width: 70%;
+    transform: scaleY(-1);
+}
