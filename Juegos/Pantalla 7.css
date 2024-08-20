@@ -1,45 +1,5 @@
 .arriba{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 0px;
-    padding-top: 0px;
-    align-items: flex-start;
-    border-bottom-width: 2px;
-    border-bottom-color: black;
-    border-bottom-style: solid;
     margin-bottom: 10px;
-}
-.sub-arriba{
-    margin-top: -10px;
-    padding-top: -10px;
-    margin-right: -10px;
-    display: flex;
-    flex-direction: row;
-}
-.otislogo{
-    width: 80px;
-    height: 80px;
-}
-.confboton{
-    height: 80px;
-    width: 400px;
-    background-color: #618fbf;
-    display: flex;
-    flex-direction: row;
-    border-bottom-width: 0px;
-}
-.configuracion{
- height: 70px;
-}
-.perfboton{
-    height: 80px;
-    width: 300px;
-    background-color: #618fbf;
-    display: flex;
-    flex-direction: row;
-    border-bottom-width: 0px;
 }
 .todo{
 display: flex;
