@@ -21,16 +21,18 @@ app.get("/enviar_datos", async (req, res) => { // endpoint
 
     const usuarioRegistrado = "ouchurus" // usuario definido
     const contraseñaRegistrada = "papaerpapapre" // contraseña definida
+    const hola = req.body
 
     const user = await User.create({contraseña: contraseñaRegistrada, usuario: usuarioRegistrado})
-    //  user =  lo que ingrese la persona en el cuadro de texto
-
+    
  
     res.send("hola")
 })
 
 app.get("/", (req, res) => {
-    res.send("pepe")
+   // res.send("p")
+   
+
 })
 
 app.listen(3000, () => {
@@ -47,3 +49,4 @@ async function encriptar(password) {
     }
 }
 
+boton.addEventListener("click", sendData)

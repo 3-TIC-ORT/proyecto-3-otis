@@ -1,5 +1,5 @@
-const usuario = document.getElementById("usuario")
-const contraseña = document.getElementById("contraseña")
+const usuario = document.getElementById("usuario").value
+const contraseña = document.getElementById("contraseña").value
 
 const boton = document.getElementById("boton")
 const botondequenoaparezca = document.getElementById("boton").value
