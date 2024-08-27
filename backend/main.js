@@ -2,37 +2,37 @@ import  Express  from "express";
 import  argon2 from "argon2";
 import { User } from "./model/modeloUser.js";
 import { hash } from "argon2";
+import express  from "express";
+import path from 'path'
+import { fileURLToPath } from "url";
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const __parentDirname = dirname(__dirname);
 
 const app = Express()
+
+app.use(express.static(path.join(__parentDirname, 'frontend/')))
+
+
 
 app.post("/enviar_datos", async (req, res) => { // endpoint
     
     const datosUser = req.body
+    console.log("back: " + datosUser)
 
     const usuarioRegistrado = datosUser.usuario
     const contraseñaRegistrada = datosUser.contraseña
 
     const user = await User.create({contraseña: contraseñaRegistrada, usuario: usuarioRegistrado})
     //  user =  lo que ingrese la persona en el cuadro de texto
-})
 
-app.get("/enviar_datos", async (req, res) => { // endpoint
-
-    const usuarioRegistrado = "ouchurus" // usuario definido
-    const contraseñaRegistrada = "papaerpapapre" // contraseña definida
-    const hola = req.body
-
-    const user = await User.create({contraseña: contraseñaRegistrada, usuario: usuarioRegistrado})
-    
- 
-    res.send("hola")
+    res.send('pepe')
 })
 
 app.get("/", (req, res) => {
-   // res.send("p")
-   
-
+   res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
 })
 
 app.listen(3000, () => {
@@ -48,5 +48,3 @@ async function encriptar(password) {
         console.log("error :(")
     }
 }
-
-boton.addEventListener("click", sendData)
