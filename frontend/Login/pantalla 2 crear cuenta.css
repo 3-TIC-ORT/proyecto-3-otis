@@ -56,3 +56,10 @@
   .regresar{
       width: 28%;
   }
+  .no{
+    background-color: #C78486;
+    position: absolute;
+    top: 0px;
+    width: 35%;
+    height: 9%;
+  }
