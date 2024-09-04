@@ -9,7 +9,7 @@ main{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 1%;
+    margin-bottom: 1%;
 }
 .ficha{
     width: 21%;

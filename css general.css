@@ -30,6 +30,7 @@ body{
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-bottom-style: solid;
+    box-sizing: content-box;
 }
 .sub-arriba{
     display: flex;
