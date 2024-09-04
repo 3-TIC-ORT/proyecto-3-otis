@@ -19,7 +19,7 @@ app.use(cors)
 app.use(express.static(path.join(__parentDirname, 'frontend/')))
 
 
-app.post("http://localhost:3000/enviar_datos", async (req, res) => { // endpoint
+app.post("/enviar_datos", async (req, res) => { // endpoint
     
     const datosUser = req.body
     console.log("back: " + datosUser)

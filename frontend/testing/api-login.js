@@ -11,7 +11,7 @@ async function sendData() {
     console.log("front: " + usuario)
     console.log("front: " + contraseña)
 
-    await fetch("http://localhost:3000/enviar_datos", {
+    let response = await fetch("/enviar_datos", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -21,5 +21,9 @@ async function sendData() {
             contraseña: contraseña
         })
     })
+
+    if (response.ok) {
+        console.log("PEPEPEPPEPEPEPEPEPE")
+    }
 }
 
