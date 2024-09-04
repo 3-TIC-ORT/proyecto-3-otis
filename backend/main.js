@@ -6,6 +6,7 @@ import express  from "express";
 import path from 'path'
 import { fileURLToPath } from "url";
 import { dirname } from 'path';
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,8 +14,9 @@ const __parentDirname = dirname(__dirname);
 
 const app = Express()
 
+app.use(express.json());
+app.use(cors)
 app.use(express.static(path.join(__parentDirname, 'frontend/')))
-
 
 
 app.post("/enviar_datos", async (req, res) => { // endpoint

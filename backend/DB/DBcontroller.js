@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"; // importa cosas utiles de la libreria sequelize
 
-const sequelize = new Sequelize('otis_db', 'root', '123456789', {
+const sequelize = new Sequelize('otis', 'root', '123456789', {
     host:"localhost",
     dialect:"mysql",
     port: 3306,
