@@ -11,7 +11,7 @@ async function sendData() {
     console.log("front: " + usuario)
     console.log("front: " + contraseña)
 
-    let response = await fetch("/enviar_datos", {
+    let response = await fetch("/enviar-datos", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

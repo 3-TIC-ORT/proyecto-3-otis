@@ -19,8 +19,8 @@ app.use(cors)
 app.use(express.static(path.join(__parentDirname, 'frontend/')))
 
 
-app.post("/enviar_datos", async (req, res) => { // endpoint
-    
+app.post("/enviar-datos", async (req, res) => { // endpoint
+ 
     const datosUser = req.body
     console.log("back: " + datosUser)
 
@@ -31,7 +31,8 @@ app.post("/enviar_datos", async (req, res) => { // endpoint
     //  user =  lo que ingrese la persona en el cuadro de texto
 
     res.send('pepe')
-})
+    
+})   
 
 app.get("/", (req, res) => {
    res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
