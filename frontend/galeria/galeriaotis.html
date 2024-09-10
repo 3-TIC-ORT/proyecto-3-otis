@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería OTIS</title>
     <link rel="stylesheet" type="text/css" href="galeria otis.css">
-    <link rel="stylesheet" type="text/css" href="../../css general.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="arriba">
@@ -27,9 +29,9 @@
     </div>
     </header>
     <section>
-        <button>
+       <a class="tdn" href="menugaleria.html"> <button>
             <p> (-- Volver a galeria</p>
-        </button>
+        </button> </a>
         <div>
             <p>Galeria de OTIS</p>
         </div>
@@ -44,19 +46,23 @@
     </section>
     <section>
         <div>
-             <img src="imagen 1.jpg" alt="a" class="imagenes">
-             <img src="imagen 1.jpg" alt="b" class="imagenes">
-            <img src="imagen 1.jpg" alt="c"  class="imagenes">
+             <img src="imagen 1.jpg" alt="a" class="imagenes" id="img0">
+             <img src="imagen 2.jpg" alt="b" class="imagenes" id="img1">
+            <img src="" alt="c"  class="imagenes" id="img2">
         </div>
         <div>
-            <button class="megustaono"> <img src="heart.png" alt="" class="corazonono"></button>
-            <button class="megustaono"> <img src="like.png" alt="" class="dislike"></button>
-            <button class="megustaono"> <img src="heart.png" alt="" class="corazonono"></button>
-            <button class="megustaono"> <img src="like.png" alt="" class="dislike"></button>
-            <button class="megustaono"> <img src="heart.png" alt="" class="corazonono"></button>
-            <button class="megustaono"> <img src="like.png" alt="" class="dislike"></button>
+            <button class="megustaono" id="megusta1"> <img src="heart.png" alt="" class="corazonono"></button>
+            <button class="megustaono" id="nomegusta1"> <img src="like.png" alt="" class="dislike"></button>
+            <button class="megustaono" id="megusta2"> <img src="heart.png" alt="" class="corazonono"></button>
+            <button class="megustaono" id="nomegusta2"> <img src="like.png" alt="" class="dislike"></button>
+            <button class="megustaono" id="megusta3"> <img src="heart.png" alt="" class="corazonono"></button>
+            <button class="megustaono" id="nomegusta3"> <img src="like.png" alt="" class="dislike"></button>
+        </div>
+        <div class="losen" id="losen">
+            <p class="triste"></p>
         </div>
     </section>
     </main>
+    <script src="galeria otis.js"></script>
 </body>
 </html>

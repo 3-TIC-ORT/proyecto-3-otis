@@ -1,0 +1,36 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+section{
+    margin-top: 10px;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+.globoytexto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dialogo{
+    position: absolute;
+    font-size: 32px;
+    width: 25%;
+    margin-left: 2%;
+}
+.dialogo > p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.globodetexto{
+    width: 84%;
+}
+.otis{
+    width: 52%;
+}

@@ -1,6 +1,22 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+p{
+    font-family: "Lilita One";
+    color: #1B4878;
+}
 body{
     background-color: #618fbf;
-    height: 90vh
+    height: 90vh;
+    width: 100vw;
 }
 .arriba{
     width: 100%;
@@ -14,36 +30,36 @@ body{
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-bottom-style: solid;
+    box-sizing: content-box;
 }
 .sub-arriba{
-    margin-top: -10px;
-    padding-top: -10px;
-    margin-right: -10px;
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 .otislogo{
     width: 80px;
     height: 80px;
 }
 .confboton{
-    height: 80px;
     width: 400px;
-    background-color: #618fbf;
-    display: flex;
-    flex-direction: row;
-    border-bottom-width: 0px;
+    border-right-width: 0px;
 }
 .configuracion{
  height: 70px;
 }
-.perfboton{
-    height: 80px;
-    width: 300px;
+.confboton, .perfboton{
     background-color: #618fbf;
     display: flex;
     flex-direction: row;
     border-bottom-width: 0px;
+    height: 100%;
+    border-top: 0ch;
+    border-style: solid;
+}
+.perfboton{
+    width: 300px;
+    border-right: 0ch;
 }
 .perfil{
     height: 70px;

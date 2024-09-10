@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+main{
+    width: 52%;
+    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 1%;
+}
+.ficha{
+    width: 21%;
+    height: 26%;
+    border-radius: 10px;
+    border: solid;
+}
+.signodepregunta{
+    width: 90%;
+}
+aside{
+    width: 43%;
+}
+.dialogoyglobo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62%;
+}
+.globodetexto{
+    width: 100%;
+}
+.dialogo{
+    position: absolute;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-size: 30px;
+}
+.otis{
+    width: 40%;
+}
