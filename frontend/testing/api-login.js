@@ -11,6 +11,7 @@ async function sendData() {
     console.log("front: " + usuario)
     console.log("front: " + contraseña)
 
+    try{
     let response = await fetch("/enviar-datos", {
         method: "POST",
         headers: {
@@ -20,10 +21,14 @@ async function sendData() {
             usuario: usuario,
             contraseña: contraseña
         })
-    })
-
-    if (response.ok) {
-        console.log("PEPEPEPPEPEPEPEPEPE")
+    });
+     if (response.ok) {
+        console.log("PEPEPEPPEPEPEPEPEPE");
+    } else {
+        console.log("nononino");
     }
-}
+    }catch(error){
+        console.log(error)
+    }
+} 
 
