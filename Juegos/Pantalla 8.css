@@ -9,6 +9,11 @@ display: flex;
 height: 50%;
 aspect-ratio: 1/1;
 flex-wrap: wrap;
+background-color: yellow;
+border-radius: 50%;
+}
+#cajaA1{
+    background-color: violet;
 }
 .cajaA{
     width: 50%;
