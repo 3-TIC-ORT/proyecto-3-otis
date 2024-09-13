@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body class="mibo">
-    <div class="body">
+    <div class="body" id="body">
         <header class="arriba">
             <div class="sub-arriba">
                 <img src="otis.png" alt="otis" class="otislogo">
@@ -46,7 +46,7 @@
     </main>
     
     <aside class="asided">
-        <button class="cambiandoestilos"><img src="configuracion.png" alt="" class="confest"></button>
+        <button class="cambiandoestilos" id="cambiandoestilos"><img src="configuracion.png" alt="" class="confest"></button>
         <div class="dialogoyglobo">
             <p class="dialogo" id="dialogo">Intenta de levantar la maxima cantidad de iguales en el minimo tiempo posible</p>
             <img src="glodetextovertical.png" alt="" class="globodetexto">
@@ -57,8 +57,43 @@
         <button id="volverajugar">Volver a jugar</button>
     </aside>
 </div>
-    <aside class="aside">
-    
+    <aside class="aside" id="menudeestilos">
+        <header>
+            <h1>Diseño</h1>
+        </header>
+        <section>
+            <h3>Colores disponibles</h3>
+            <div>
+                <button class="cambiacolor1"></button>
+                <button class="cambiacolor2"></button>
+                <button class="cambiacolor3"></button>
+                <button class="cambiacolor4"></button>
+            </div>
+        </section>
+        <section>
+            <h3>Elegir imagen</h3>
+            <button class="imagenes" id="">
+                <p>1</p>
+            </button>
+            <button class="imagenes" id="">
+                <p>2</p>
+            </button>
+            <button class="imagenes" id="">
+                <p>3</p>
+            </button>
+            <button class="imagenes" id="">
+                <p>4</p>
+            </button>
+            <button class="imagenes" id="">
+                <p>5</p>
+            </button>
+            <button class="imagenes" id="">
+                <p>6</p>
+            </button>
+        </section>
+        <section>
+            <button id="cerrar"> <h1>Cerrar</h1> </button>
+        </section>
     </aside>
     <script src="memotest.js"></script>
 </body>

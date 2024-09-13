@@ -1,3 +1,6 @@
+body{
+    height: 100vh;
+}
 .mibo{
     display: flex;
     flex-direction: row; 
@@ -25,6 +28,7 @@ main{
     height: 26%;
     border-radius: 10px;
     border: solid;
+    background-color: #DDE03A;
 }
 .signodepregunta{
     width: 90%;
@@ -61,6 +65,11 @@ main{
 }
 .aside{
     height: 100%;
-    width: 20%;
-    background-color: aqua;
+    width: 17%;
+    background-color: #B0C2D6;
+    position: relative;
+    border-width: 4px;
+    border-color: #527EAC;
+    border-radius: 10px;
+    border-style: solid;
 }

@@ -19,7 +19,7 @@ let bloqueador = 0;
 let bloqueador2 = 0;
 let dis = "¿?";
 function srcreal(){
-  if(bloqueador2 === 0){
+  if(bloqueador2 === 0 && bloqueador4 === 0){
     bloqueador2 = 1;
     for(let le = 0; le < 12; le++){
     if(document.getElementById(`boton${le+1}`) === this){
@@ -100,4 +100,28 @@ function volverajugar(){
             srci[j] = t
     }
     dis = "¿?";
+}
+let bloqueador3 = 1;
+let bloqueador4 = 0;
+document.getElementById("cambiandoestilos").addEventListener("click", mostrarlacosa);
+function mostrarlacosa (){
+    if(bloqueador4 === 0){
+    document.getElementById("menudeestilos").style.right = "17%";
+    document.getElementById("body").style.filter = "brightness(80%)"
+    bloqueador4 = 1;
+    setTimeout(() => {
+    bloqueador3 = 0; 
+}, 100);
+}  
+}
+document.getElementById("cerrar").addEventListener("click", sacaelaside);
+function sacaelaside(){
+     if(bloqueador3 === 0){
+      document.getElementById("menudeestilos").style.right = "0%";
+      document.getElementById("body").style.filter = "brightness(100%)"
+      bloqueador3 = 1;
+      setTimeout(() => {
+        bloqueador4 = 0; 
+    }, 100);
+}
 }
