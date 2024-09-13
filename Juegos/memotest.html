@@ -11,47 +11,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="arriba">
-        <div class="sub-arriba">
-        <img src="otis.png" alt="otis" class="otislogo">
-        <h1>OTIS</h1>
-    </div>
-    <div class="sub-arriba">
-        <button class="confboton">
-            <img src="configuracion.png" alt="" class="configuracion">
-            <h1>configuración</h1>
-        </button>
-        <a class="tdn" href="../frontend/Login/Pantalla 2.html">
-            <button  class="perfboton">
-             <h1>Perfil</h1>
+<body class="mibo">
+    <div class="body">
+        <header class="arriba">
+            <div class="sub-arriba">
+                <img src="otis.png" alt="otis" class="otislogo">
+                <h1>OTIS</h1>
+            </div>
+            <div class="sub-arriba">
+                <button class="confboton">
+                    <img src="configuracion.png" alt="" class="configuracion">
+                    <h1>configuración</h1>
+                </button>
+                <a class="tdn" href="../frontend/Login/Pantalla 2.html">
+                    <button  class="perfboton">
+                        <h1>Perfil</h1>
             <img src="otis.png" alt="perfil" class="perfil">
         </button></a> 
     </div>
     </header>
     <main>
-        <button class="ficha" id="boton1"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton2"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton3"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton4"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton5"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton6"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton7"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton8"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton9"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton10"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton11"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
-        <button class="ficha" id="boton12"><img src="signodepregunta.png" alt="" class="signodepregunta"></button>
+        <button class="ficha" id="boton1"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen1"></button>
+        <button class="ficha" id="boton2"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen2"></button>
+        <button class="ficha" id="boton3"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen3"></button>
+        <button class="ficha" id="boton4"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen4"></button>
+        <button class="ficha" id="boton5"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen5"></button>
+        <button class="ficha" id="boton6"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen6"></button>
+        <button class="ficha" id="boton7"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen7"></button>
+        <button class="ficha" id="boton8"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen8"></button>
+        <button class="ficha" id="boton9"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen9"></button>
+        <button class="ficha" id="boton10"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen10"></button>
+        <button class="ficha" id="boton11"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen11"></button>
+        <button class="ficha" id="boton12"><img src="signodepregunta.png" alt="" class="signodepregunta" id="imagen12"></button>
     </main>
-
-    <aside>
+    
+    <aside class="asided">
+        <button class="cambiandoestilos"><img src="configuracion.png" alt="" class="confest"></button>
         <div class="dialogoyglobo">
-            <p class="dialogo">Intenta de levantar la maxima cantidad de iguales en el minimo tiempo posible</p>
+            <p class="dialogo" id="dialogo">Intenta de levantar la maxima cantidad de iguales en el minimo tiempo posible</p>
             <img src="glodetextovertical.png" alt="" class="globodetexto">
-    </div>
-    <img class="otis" src="otis.png" alt="">
-    <button>Volver</button>
-    <button>volver a la sala de juegos</button>
+        </div>
+        <img class="otis" src="otis.png" alt="">
+        <a href="../frontend/Pantalla6.html" class="tdn"><button>Volver al menu</button> </a> 
+        <a href="Pantalla 6bis.html" class="tdn"><button>volver a la sala de juegos</button> </a>
+        <button id="volverajugar">Volver a jugar</button>
+    </aside>
+</div>
+    <aside class="aside">
+    
     </aside>
     <script src="memotest.js"></script>
 </body>
