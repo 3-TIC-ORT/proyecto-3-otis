@@ -1,7 +1,15 @@
-body{
+.mibo{
+    display: flex;
+    flex-direction: row; 
+    overflow-x: hidden; 
+    width: 200vw;
+}
+.body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 50%;
+    height: 100%;
 }
 main{
     width: 52%;
@@ -21,7 +29,7 @@ main{
 .signodepregunta{
     width: 90%;
 }
-aside{
+.asided{
     width: 43%;
 }
 .dialogoyglobo{
@@ -42,4 +50,17 @@ aside{
 }
 .otis{
     width: 40%;
+}
+.cambiandoestilos{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+.confest{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+.aside{
+    height: 100%;
+    width: 20%;
+    background-color: aqua;
 }

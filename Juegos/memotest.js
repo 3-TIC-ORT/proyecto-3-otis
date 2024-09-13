@@ -55,7 +55,6 @@ function srcreal(){
                 dis.style.opacity = "0";
                 priboton.style.opacity = "0";
                 cantidaddepares++;
-                document.getElementById("nosequecosa").innerHTML =`Puntuación: ${cantidaddepares}`;
                 bloqueador2 = 0;
             }, 1000);
             } else{
@@ -93,7 +92,6 @@ function volverajugar(){
         document.getElementById(`boton${LETm+1}`).style.opacity = "1";
      }
      document.getElementById("dialogo").innerHTML = "Intenta de levantar la maxima cantidad de iguales en el minimo tiempo posible"
-     document.getElementById("nosequecosa").innerHTML = "Puntuación: 0"
      segundalista = [];
     for(let i=srci.length-1; i > 0; i--){
          let j = Math.floor(Math.random()*(i+1));
