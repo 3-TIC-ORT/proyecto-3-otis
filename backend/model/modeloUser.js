@@ -1,7 +1,7 @@
 import { sequelize } from "../DB/DBcontroller.js";
 import  Sequelize  from "sequelize";
 
-const User = sequelize.define("Users", {
+const User = sequelize.define("User", {
     idusers: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -9,12 +9,12 @@ const User = sequelize.define("Users", {
         autoIncrement: true,
     },
     usuario: {
-        type: Sequelize.STRING(25),
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true
     },
     contraseña: {
-        type: Sequelize.STRING(25),
+        type: Sequelize.STRING,
         allowNull: false
     },
         /*audiosSubidos: {

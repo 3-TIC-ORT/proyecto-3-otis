@@ -22,13 +22,14 @@ async function sendData() {
             contraseña: contraseña
         })
     });
-     if (response.ok) {
+
+    if (response.ok) {
         console.log("PEPEPEPPEPEPEPEPEPE");
     } else {
         console.log("nononino");
     }
     }catch(error){
-        console.log(error)
+        console.error("prroblema", error);
     }
 } 
 
