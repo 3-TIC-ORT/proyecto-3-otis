@@ -98,6 +98,7 @@ function volverajugar(){
     cantidaddepares = 0;
      bloqueador2 = 0;
      turnos = 1;
+     botonesquenodebepasarnadasoselostoca = [];
      for(let LETm = 0; LETm <  12; LETm++){
         document.getElementById(`imagen${LETm+1}`).src = "signodepregunta.png";
         document.getElementById(`boton${LETm+1}`).style.opacity = "1";
