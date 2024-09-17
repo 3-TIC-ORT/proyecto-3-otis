@@ -29,8 +29,10 @@ main{
     border-radius: 10px;
     border: solid;
     background-color: #DDE03A;
+    border-width: 1px;
 }
 .signodepregunta{
+    height: 90%;
     width: 90%;
 }
 .asided{
