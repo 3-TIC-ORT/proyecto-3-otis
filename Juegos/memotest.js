@@ -1,5 +1,7 @@
-let srci = ["memotest1.PNG", "memotest2.PNG", "memotest3.PNG", "memotest4.PNG", "memotest5.PNG", "memotest6.PNG", "memotest1.PNG", "memotest2.PNG", "memotest3.PNG", "memotest4.PNG", "memotest5.PNG", "memotest6.PNG"];
+let srci = ["memotestA", "memotestB", "memotestC", "memotestD", "memotestE", "memotestF", "memotestA", "memotestB", "memotestC", "memotestD", "memotestE", "memotestF"];
+let completasurs = "1.PNG";
 let segundalista = [];
+let botonesquenodebepasarnadasoselostoca = [];
 for(let i=srci.length-1; i > 0; i--){
     let j = Math.floor(Math.random()*(i+1));
     let t = srci[i]; 
@@ -18,12 +20,18 @@ let cantidaddepares = 0;
 let bloqueador = 0;
 let bloqueador2 = 0;
 let dis = "¿?";
+let ultimobloqueador = 0;
 function srcreal(){
-  if(bloqueador2 === 0){
+    for(let i = 0; i < botonesquenodebepasarnadasoselostoca.length; i++){
+        if(this === botonesquenodebepasarnadasoselostoca[i]){
+            ultimobloqueador = 1;
+        }
+    }
+  if(bloqueador2 === 0 && bloqueador4 === 0 && ultimobloqueador === 0){
     bloqueador2 = 1;
     for(let le = 0; le < 12; le++){
     if(document.getElementById(`boton${le+1}`) === this){
-        document.getElementsByClassName("signodepregunta")[le].src = srci[le];
+        document.getElementsByClassName("signodepregunta")[le].src = srci[le]+completasurs;
         if(turnos === 1){
         primagen = srci[le];
         priboton = this;
@@ -56,6 +64,8 @@ function srcreal(){
                 priboton.style.opacity = "0";
                 cantidaddepares++;
                 bloqueador2 = 0;
+                botonesquenodebepasarnadasoselostoca.push(priboton);
+                botonesquenodebepasarnadasoselostoca.push(dis);
             }, 1000);
             } else{
                 bloqueador = 1;
@@ -77,6 +87,7 @@ function srcreal(){
     }
     }
 }
+ultimobloqueador = 0;
 }
 document.getElementById("volverajugar").addEventListener("click", volverajugar);
 function volverajugar(){
@@ -87,6 +98,7 @@ function volverajugar(){
     cantidaddepares = 0;
      bloqueador2 = 0;
      turnos = 1;
+     botonesquenodebepasarnadasoselostoca = [];
      for(let LETm = 0; LETm <  12; LETm++){
         document.getElementById(`imagen${LETm+1}`).src = "signodepregunta.png";
         document.getElementById(`boton${LETm+1}`).style.opacity = "1";
@@ -100,4 +112,50 @@ function volverajugar(){
             srci[j] = t
     }
     dis = "¿?";
+}
+let bloqueador3 = 1;
+let bloqueador4 = 0;
+document.getElementById("cambiandoestilos").addEventListener("click", mostrarlacosa);
+function mostrarlacosa (){
+    if(bloqueador4 === 0){
+    document.getElementById("menudeestilos").style.right = "17%";
+    document.getElementById("body").style.filter = "brightness(80%)"
+    bloqueador4 = 1;
+    setTimeout(() => {
+    bloqueador3 = 0; 
+}, 100);
+}  
+}
+document.getElementById("cerrar").addEventListener("click", sacaelaside);
+function sacaelaside(){
+     if(bloqueador3 === 0){
+      document.getElementById("menudeestilos").style.right = "0%";
+      document.getElementById("body").style.filter = "brightness(100%)"
+      bloqueador3 = 1;
+      setTimeout(() => {
+        bloqueador4 = 0; 
+    }, 100);
+}
+}
+let botonanterior = document.getElementById("color1")
+function cambiodecolor(){
+    for(let i = 0; i < 12; i++){
+        document.getElementById(`boton${i+1}`).style.backgroundColor = this.value
+    }
+    botonanterior.style.borderWidth = "0";
+    botonanterior = this;
+    this.style.borderWidth = "4px";
+}
+for(let i = 0; i < 4; i++){
+    document.getElementById(`color${i+1}`).addEventListener("click", cambiodecolor);
+}
+function cambiodeimagen(){
+    completasurs = `${this.value}.PNG`
+    if(turnos === 2){
+        priloultimo.src = primagen+completasurs;
+    }
+}
+
+for(let i = 0; i < 6; i++){
+    document.getElementById(`opcionesimagenes${i+1}`).addEventListener("click", cambiodeimagen);
 }

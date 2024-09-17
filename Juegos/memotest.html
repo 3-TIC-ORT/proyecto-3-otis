@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body class="mibo">
-    <div class="body">
+    <div class="body" id="body">
         <header class="arriba">
             <div class="sub-arriba">
                 <img src="otis.png" alt="otis" class="otislogo">
@@ -46,7 +46,7 @@
     </main>
     
     <aside class="asided">
-        <button class="cambiandoestilos"><img src="configuracion.png" alt="" class="confest"></button>
+        <button class="cambiandoestilos" id="cambiandoestilos"><img src="configuracion.png" alt="" class="confest"></button>
         <div class="dialogoyglobo">
             <p class="dialogo" id="dialogo">Intenta de levantar la maxima cantidad de iguales en el minimo tiempo posible</p>
             <img src="glodetextovertical.png" alt="" class="globodetexto">
@@ -57,8 +57,45 @@
         <button id="volverajugar">Volver a jugar</button>
     </aside>
 </div>
-    <aside class="aside">
-    
+    <aside class="aside" id="menudeestilos">
+        <header class="diseño">
+            <h1>Diseño</h1>
+        </header>
+        <section class="colores">
+            <h3>Colores disponibles</h3>
+            <div>
+                <button style="background-color: #DDE03A;" class="losbotonesdecoloresa" id="color1" value="#DDE03A"></button>
+                <button style="background-color: #5F75C5;" class="losbotonesdecolores" id="color2" value="#5F75C5"></button>
+                <button style="background-color: #E374CB;" class="losbotonesdecolores" id="color3" value="#E374CB"></button>
+                <button style="background-color: #94E96C;" class="losbotonesdecolores" id="color4" value="#94E96C"></button>
+            </div>
+        </section>
+        <section class="imagenesAAAnosemeocurrennombresparalasclases">
+            <h3>Elegir imagen</h3>
+          <div class="esteeseldivquecontienelosbotonesyestoytancansadodedarleunnombreacadaclasequeestavaaserlaclasemaslargaquealgunavezinvente">
+            <button class="imagenes" id="opcionesimagenes1" value="1">
+                <p>1</p>
+            </button>
+            <button class="imagenes" id="opcionesimagenes2" value="2">
+                <p>2</p>
+            </button>
+            <button class="imagenes" id="opcionesimagenes3" value="3">
+                <p>3</p>
+            </button>
+            <button class="imagenes" id="opcionesimagenes4" value="4">
+                <p>4</p>
+            </button>
+            <button class="imagenes" id="opcionesimagenes5" value="5">
+                <p>5</p>
+            </button>
+            <button class="imagenes" id="opcionesimagenes6" value="6">
+                <p>6</p>
+            </button>
+          </div>
+        </section>
+        <section class="cerrar">
+            <button id="cerrar"> <h1>Cerrar</h1> </button>
+        </section>
     </aside>
     <script src="memotest.js"></script>
 </body>
