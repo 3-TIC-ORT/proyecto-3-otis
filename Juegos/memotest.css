@@ -73,3 +73,89 @@ main{
     border-radius: 10px;
     border-style: solid;
 }
+.diseño, .colores, .imagenesAAAnosemeocurrennombresparalasclases{
+     border-bottom: 1px#304A66 solid;
+}
+.diseño{
+    height: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diseño > h1{
+    font-size: 3.125em;
+}
+.colores{
+    height: 24%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.colores > h3{
+   font-size: 2.1875em;
+   margin-left: 1%;
+}
+.colores > div{
+    height: 61%;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.losbotonesdecolores, .losbotonesdecoloresa{
+    height: 65%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    border: 0px #527EAC solid;
+    margin-right: 2%;
+}
+.losbotonesdecoloresa{
+    border-width: 4px;
+}
+.imagenesAAAnosemeocurrennombresparalasclases{
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.imagenesAAAnosemeocurrennombresparalasclases > h3{
+   font-size: 2.1875em;
+   margin-bottom: 1%;
+}
+.esteeseldivquecontienelosbotonesyestoytancansadodedarleunnombreacadaclasequeestavaaserlaclasemaslargaquealgunavezinvente{
+    height: 77%;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: center;
+    align-items:baseline;
+}
+.imagenes{
+    width: 25.714285714%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    background-color: #5F75C5;
+}
+.imagenes > p{
+    font-size: 2.5em;
+}
+.cerrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22%;
+}
+.cerrar > button{
+    width: 54%;
+    height: 60%;
+    background-color: #527EAC;
+    border: 1px #113154 solid;
+    border-radius: 35px;
+}
+.cerrar > button > h1{
+    font-size: 2.1875em;
+    
+}
