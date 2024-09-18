@@ -20,15 +20,13 @@ body{
 }
 .arriba{
     width: 100%;
-    height: 70px;
+    height: 11%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 0px;
-    padding-top: 0px;
     align-items: flex-start;
-    border-bottom-width: 2px;
-    border-bottom-color: black;
+    border-bottom-width: 11px;
+    border-bottom-color: #1B4878;
     border-bottom-style: solid;
     box-sizing: content-box;
 }
@@ -38,14 +36,14 @@ body{
     height: 100%;
 }
 .otislogo{
-    height: 99%;
+    height: 90%;
 }
 .confboton{
     width: 400px;
     border-right-width: 0px;
 }
 .configuracion{
- height: 70px;
+ height: 90%;
 }
 .confboton, .perfboton{
     background-color: #618fbf;
@@ -55,14 +53,18 @@ body{
     height: 100%;
     border-top: 0ch;
     border-style: solid;
+    border-color: #1B4878;
 }
 .perfboton{
     width: 300px;
     border-right: 0ch;
 }
 .perfil{
-    height: 70px;
+    height: 90%;
 }
 .tdn{
     text-decoration: none;
+}
+.textosdearriba{
+    height: 90%;
 }

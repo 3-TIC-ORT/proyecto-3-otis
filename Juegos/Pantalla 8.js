@@ -80,3 +80,15 @@ function cajaE () {
     }
     }   
 }
+document.getElementById("reiniciar").addEventListener("click", reiniciar);
+function reiniciar(){
+    for(let i = document.getElementById("caja").children.length; i > 0; i--){
+        document.getElementById(`cajaA${i-1}`).remove();
+    }
+    j = 0;
+    k = 0;
+    l = 0;
+    m = 0;
+    n = 0;
+    document.getElementById("caja").style.backgroundColor = "yellow";
+}
