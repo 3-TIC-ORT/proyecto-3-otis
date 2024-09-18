@@ -39,11 +39,12 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
             console.error('Error al registrar el usuario:', error);
         res.status(500).send('Error en el servidor');
         }
-    
+
 });
 
 app.get("/", (req, res) => {
    res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
+
 })
 
 app.listen(3000, () => {
