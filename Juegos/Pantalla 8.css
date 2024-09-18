@@ -30,7 +30,6 @@ border-radius: 50%;
     background-color: aqua;
     display: flex;
     flex-wrap: wrap;
-    opacity: 0;
 }
 .cajaC{
     width: 50%;
@@ -39,7 +38,6 @@ border-radius: 50%;
     background-color: palegoldenrod;
     display: flex;
     flex-wrap: wrap;
-    opacity: 0;
 }
 .cajaD{
     height: 50%;
@@ -48,12 +46,18 @@ border-radius: 50%;
     background-color: fuchsia;
     display: flex;
     flex-wrap: wrap;
-    opacity: 0;
 }
 .cajaE{
     height: 50%;
     aspect-ratio: 1/1;
     background-color: green;
     border-radius: 50%;
-    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cajaF{
+    height: 50%;
+    aspect-ratio: 1/1;
+    background-color: peru;
+    border-radius: 50%;
 }
