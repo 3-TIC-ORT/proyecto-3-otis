@@ -1,57 +1,82 @@
-function A(){
-    this.style.backgroundColor = 'transparent'
-    for(let i = 0; i<4; i++){
-        if(document.getElementsByClassName("cajaA")[i] === this){
-            for(let j = 0; j<4; j++){
-                document.getElementsByClassName("cajaB")[i*4+j].style.opacity = "1";
-            }
-        }
+function ahorasi(){
+    if(document.getElementsByClassName("cajaA").length === 0){
+    document.getElementById("caja").style.backgroundColor = "transparent";
+    for(let i = 0; i < 4; i++){
+    let item = document.createElement("div");
+    item.id = `cajaA${i}`;
+    item.className = "cajaA"
+    document.getElementById("caja").appendChild(item);
+    document.getElementById(`cajaA${i}`).addEventListener("mouseenter", cajaA);
+} 
+}
+}
+let j = 0;
+document.getElementById("caja").addEventListener("mouseenter", ahorasi);
+function cajaA(){
+    if(this.children.length === 0){
+    this.style.backgroundColor = "transparent";
+    for(let i = 0; i < 4; i++){
+    let item = document.createElement("div");
+    item.id = `cajaB${j}`;
+    item.className = "cajaB"
+    this.appendChild(item);
+    document.getElementById(`cajaB${j}`).addEventListener("mouseenter", cajaB); 
+    j++;
+}
+}
+}
+let k = 0;
+function cajaB(){
+    if(this.children.length === 0){
+        this.style.backgroundColor = "transparent";
+        for(let i = 0; i < 4; i++){
+        let item = document.createElement("div");
+        item.id = `cajaC${k}`;
+        item.className = "cajaC"
+        this.appendChild(item);
+        document.getElementById(`cajaC${k}`).addEventListener("mouseenter", cajaC); 
+        k++;
     }
-
+    } 
 }
-for(let k = 0; k<4; k++){
-document.getElementsByClassName("cajaA")[k].addEventListener("mouseenter", A);
-}
-
-function B(){
-    this.style.backgroundColor = 'transparent'
-    for(let i = 0; i<16; i++){
-        if(document.getElementsByClassName("cajaB")[i] === this){
-            for(let j = 0; j<4; j++){
-                document.getElementsByClassName("cajaC")[i*4+j].style.opacity = "1";
-        }
+let l = 0;
+function cajaC(){
+    if(this.children.length === 0){
+        this.style.backgroundColor = "transparent";
+        for(let i = 0; i < 4; i++){
+        let item = document.createElement("div");
+        item.id = `cajaD${l}`;
+        item.className = "cajaD"
+        this.appendChild(item);
+        document.getElementById(`cajaD${l}`).addEventListener("mouseenter", cajaD); 
+        l++;
     }
+    } 
 }
-}
-for(let k = 0; k<16; k++){
-document.getElementsByClassName("cajaB")[k].addEventListener("mouseenter", B);
-}
-
-function C(){
-    this.style.backgroundColor = 'transparent'
-    for(let i = 0; i<64; i++){
-        if(document.getElementsByClassName("cajaC")[i] === this){
-            for(let j = 0; j<4; j++){
-                document.getElementsByClassName("cajaD")[i*4+j].style.opacity = "1";
-        }
+let m = 0;
+function cajaD(){
+    if(this.children.length === 0){
+        this.style.backgroundColor = "transparent";
+        for(let i = 0; i < 4; i++){
+        let item = document.createElement("div");
+        item.id = `cajaE${m}`;
+        item.className = "cajaE"
+        this.appendChild(item);
+        document.getElementById(`cajaE${m}`).addEventListener("mouseenter", cajaE); 
+        m++;
     }
+    } 
 }
-}
-for(let k = 0; k<64; k++){
-document.getElementsByClassName("cajaC")[k].addEventListener("mouseenter", C);
-}
-
-function D(){
-    this.style.backgroundColor = 'transparent'
-    for(let i = 0; i<256; i++){
-        if(document.getElementsByClassName("cajaD")[i] === this){
-            for(let j = 0; j<4; j++){
-                document.getElementsByClassName("cajaE")[i*4+j].style.opacity = "1";
-        }
+let n = 0;
+function cajaE () {
+    if(this.children.length === 0){
+        this.style.backgroundColor = "transparent";
+        for(let i = 0; i < 4; i++){
+        let item = document.createElement("div");
+        item.id = `cajaF${n}`;
+        item.className = "cajaF"
+        this.appendChild(item);
+        n++;
     }
+    }   
 }
-}
-for(let k = 0; k<256; k++){
-document.getElementsByClassName("cajaD")[k].addEventListener("mouseenter", D);
-}
-
