@@ -5,14 +5,21 @@
     justify-content: space-around;
     align-items: center;
 }
-.los6{
+.los4{
     display: flex;
     justify-content: space-around;
-    margin-top: 70px;
+    align-items: center;
+    height: 89%;
+    width: 100%;
 }
 .botonpr{
-    width: 400px;
-    height: 70px;
+    height: 100%;
+    width: 100%;
+    background-color: #3E6288;
+    border-color: #1B4878;
+    border-width: 5px;
+    border-radius: 13%;
+    border-style: solid;
 }
 .OTIS{
     font-size: 60px;
@@ -22,4 +29,16 @@
     border-width: 0px;
     background-color: white;
     font-size: 20px;
+}
+.tdn{
+    width: 20%;
+    aspect-ratio: 1/1;
+}
+.imgbtn{
+    width: 62%;
+    aspect-ratio: 1/1;
+}
+.elpdelbtn{
+    font-size: 2.5em;
+    color: #ffffff;
 }

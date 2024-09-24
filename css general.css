@@ -28,18 +28,23 @@ body{
     border-bottom-width: 11px;
     border-bottom-color: #1B4878;
     border-bottom-style: solid;
-    box-sizing: content-box;
 }
-.sub-arriba{
+.sub-arriba, .sub-arriba2{
     display: flex;
     flex-direction: row;
     height: 100%;
+}
+.sub-arriba{
+    width: 32%;
+}
+.sub-arriba2{
+    width: 52%;
 }
 .otislogo{
     height: 90%;
 }
 .confboton{
-    width: 400px;
+    width: 57%;
     border-right-width: 0px;
 }
 .configuracion{
@@ -56,7 +61,7 @@ body{
     border-color: #1B4878;
 }
 .perfboton{
-    width: 300px;
+    width: 43%;
     border-right: 0ch;
 }
 .perfil{
