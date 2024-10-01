@@ -1,5 +1,38 @@
 body{
     display: flex;
+    flex-direction: column;
+}
+.elcosoeze{
+    height: 89%;
+    width: 100%;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+}
+.elcosoeze > section, .elcosoeze > main, .elcosoeze > aside{
+height: 100%;
+}
+.elcosoeze > section{
+width: 20%;
+display: flex;
+justify-content: center;
+}
+.elcosoeze > main{
+    width: 36%;
+}
+.elcosoeze > aside{
+    width: 44%;
+}
+.atras{
+    height: 11%;
+    aspect-ratio: 188/72;
+    border: 1px solid #1B4878;
+    border-radius: 35px;
+    position: relative;
+    top: 3.8%;
+}
+.atras > p{
+    font-size: 2.6875em;
+}
+.input{
+
 }
