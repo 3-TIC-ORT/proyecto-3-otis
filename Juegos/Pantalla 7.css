@@ -1,34 +1,42 @@
-.arriba{
-    margin-bottom: 10px;
-}
 .todo{
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background-color: #618fbf;
+align-items: flex-start;
 }
-
+main{
+    width: 37%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+}
+main > div{
+    height: 50%;
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+}
 .rojo{
-    width: 250px;
-    height: 250px;
+    width: 50%;
+    height: 100%;
     background-color: #850000;
     border-width: 0px;
 }
 .azul{
-    width: 250px;
-    height: 250px;
+    width: 50%;
+    height: 100%;
     background-color: #000085;
     border-width: 0px;
 }
 .amarillo{
-    width: 250px;
-    height: 250px;
+    width: 50%;
+    height: 100%;
     background-color: #858500;
     border-width: 0px;
 }
 .verde{
-    width: 250px;
-    height: 250px;
+    width: 50%;
+    height: 100%;
     background-color: #008500;
     border-width: 0px;
 }
@@ -39,12 +47,55 @@ background-color: #618fbf;
     justify-content: center;
     align-items: center;
 }
-
-.perfil{
-    width: 100px;
+.Empazar{
+    background-color: #85A5C7;
+    border-color: #1B4878;
+    color: #1B4878;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    width: 20.6%;
+    aspect-ratio: 28/11;
+    font-size: 1.875em;
+    box-shadow: 0px 2px 3px #333333;
+    margin-right: 4.45%;
+    margin-left: 10.29%;
 }
-
-
-.tdn{
-    text-decoration: none;
-    }
+aside{
+    width: 63%;
+    height: 89%;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-around;
+}
+aside > header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+aside > header > div{
+    width: 24%;
+    aspect-ratio: 245/66;
+    background-color: #85A5C7;
+    border-color: #1B4878;
+    border-width: 1px;
+    border-radius: 15px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.puntuacion{
+    font-size: 1.75em;
+}
+.otishabla{
+    height: 34.3%;
+    display: flex;
+    flex-direction: row;
+}
+.otis{
+    height: 100%;
+}
+.mensaje{
+    position: absolute;
+}

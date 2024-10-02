@@ -2,7 +2,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
 }
 main{
 display: flex;
@@ -11,9 +10,6 @@ aspect-ratio: 1/1;
 flex-wrap: wrap;
 background-color: yellow;
 border-radius: 50%;
-}
-#cajaA1{
-    background-color: violet;
 }
 .cajaA{
     width: 50%;
