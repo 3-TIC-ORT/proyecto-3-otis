@@ -3,6 +3,7 @@
 const boton = document.getElementById("boton")
 
 boton.addEventListener("click", sendData)
+console.log('AYUDA')
 
 async function sendData() {
 
@@ -11,25 +12,23 @@ async function sendData() {
     console.log("front: " + usuario)
     console.log("front: " + contraseña)
 
-    try{
-    let response = await fetch("/enviar-datos", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-            usuario: usuario,
-            contraseña: contraseña
-        })
-    });
+    try {
+        let response = await fetch("http://localhost:3000/enviar-datos", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                usuario: usuario,
+                contraseña: contraseña
+            })
+        });
 
-    if (response.ok) {
-        console.log("PEPEPEPPEPEPEPEPEPE");
-    } else {
-        console.log("nononino");
-    }
-    }catch(error){
-        console.error("prroblema", error);
+        if (response.ok) {
+            console.log("PEPEPEPPEPEPEPEPEPE");
+        } 
+    } catch(error) {
+        console.log('Error:', error)
     }
 } 
 

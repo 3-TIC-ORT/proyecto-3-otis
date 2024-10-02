@@ -16,7 +16,6 @@ const app = Express()
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__parentDirname, 'frontend/')))
 
 
 app.post("/enviar-datos", async (req, res) => { // endpoint
@@ -28,17 +27,19 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
     const contraseñaRegistrada = datosUser.contraseña
 
 
-        try {
-            const hashContraseña = await argon2.hash(contraseñaRegistrada);
-            const user = await User.create({
-                contraseña: hashContraseña,
-                usuario: usuarioRegistrado
+    try {
+        const hashContraseña = await argon2.hash(contraseñaRegistrada);
+        const user = await User.create({
+            contraseña: hashContraseña,
+            usuario: usuarioRegistrado
         })
-        }
-        catch(error) {
-            console.error('Error al registrar el usuario:', error);
+
+        res.status(200).send('Se envio el usuario')
+
+    } catch(error) {
+        console.error('Error al registrar el usuario:', error);
         res.status(500).send('Error en el servidor');
-        }
+    }
 
 });
 
@@ -62,19 +63,22 @@ async function entrarAMiUsuario (req, res) {
             console.log('Existe usuario, no contraseña'); 
             return res.status(401).json({ message: 'Existe usuario, no contraseña' });
         }
-          
+        
        }catch (err) { 
         console.error('no anduvbvbvo', err);
-        return res.status(500).json({ error: 'funciono mal pipipipi' }); 
+        res.status(500).json({ error: 'funciono mal pipipipi' }); 
       }
 }
 
 
 app.get("/", async (req, res) => {
    res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
-   await entrarAMiUsuario(req, res);
+  // await entrarAMiUsuario(req, res);
 });
 
+app.get("/login", async (req, res) => {
+    entrarAMiUsuario()
+});
 
 app.listen(3000, () => {
     console.log("hip hip hurra")
