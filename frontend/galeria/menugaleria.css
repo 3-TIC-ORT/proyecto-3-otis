@@ -34,3 +34,36 @@ section{
 .otis{
     width: 52%;
 }
+.tdn{
+    width: 41%;
+}
+.quehacer{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px #1B4878 solid;
+    border-radius: 13%;
+    background-color: #527EAC;
+}
+.quehacer > p{
+    color: white;
+    font-size: 2em;
+}
+.quehacer > img{
+    width: 52%;
+}
+.notdn{
+    text-decoration: none;
+}
+
+.notdn > button{
+    position: absolute;
+    bottom:5.9%;
+    right: 1.7%;
+    width: 38%;
+    height: 11%;
+    border: 1px #1B4878 solid;
+    border-radius: 35px; 
+}
+.notdn > button > p{
+    font-size: 2.5em;
+}
