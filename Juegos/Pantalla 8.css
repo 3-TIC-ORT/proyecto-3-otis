@@ -43,14 +43,14 @@ display: flex;
 height: 82%;
 aspect-ratio: 1/1;
 flex-wrap: wrap;
-background-color: yellow;
+background-color: #414141;
 border-radius: 50%;
 }
 .cajaA{
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: brown;
+    background-color: #964665;
     display: flex;
     flex-wrap: wrap;
 }
@@ -58,7 +58,7 @@ border-radius: 50%;
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: #D35D5D;
     display: flex;
     flex-wrap: wrap;
 }
@@ -66,7 +66,7 @@ border-radius: 50%;
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: palegoldenrod;
+    background-color: #FF9274;
     display: flex;
     flex-wrap: wrap;
 }
@@ -74,14 +74,14 @@ border-radius: 50%;
     height: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: fuchsia;
+    background-color: #FFDE71;
     display: flex;
     flex-wrap: wrap;
 }
 .cajaE{
     height: 50%;
     aspect-ratio: 1/1;
-    background-color: green;
+    background-color: #FF7F50;
     border-radius: 50%;
     display: flex;
     flex-wrap: wrap;
@@ -89,7 +89,7 @@ border-radius: 50%;
 .cajaF{
     height: 50%;
     aspect-ratio: 1/1;
-    background-color: peru;
+    background-color: #FF812E;
     border-radius: 50%;
 }
 .button, .button1{
