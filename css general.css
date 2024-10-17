@@ -75,4 +75,6 @@ body{
 }
 button{
     background-color: #85A5C7;
+    border-color: #1B4878;
+    border-style: solid;
 }

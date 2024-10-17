@@ -11,7 +11,8 @@ align-content: flex-start;
     height: 89%;
     flex-direction: column;
     justify-content: space-around;
-    width: 61.7487%;
+    align-items: center;
+    width: 53%;
 }
 .globo{
     width: 100%;
@@ -33,15 +34,79 @@ width: 30.97%;
 }
 .dialogodiv{
     position: absolute;
-    width: 238px;
+    width: 20%;
+    height: 24%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .dialogo{
     font-size: 1.25em;
 }
-.menuprinc{
-    
+.panico{
+    width: 53%;
+    height: 22%;
+    background-color: #AC5252;
+    border-color: #1B4878;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-width: 1px;
+    border-radius: 35px;
+    border-style: solid;
 }
-
+.panico > div{
+    width: 44%;
+}
+.panico > img{
+    height: 90%;
+}
+.panico > div > p{
+    color: #561414;
+    font-size: 3em;
+}
 .tdn{
     text-decoration: none;
+    width: 77%;
     }
+.botonesdejuegos{
+    width: 47%;
+    height: 89%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: space-around;
+}
+.paraqueeltipoelijaunjuegoyserelaje{
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #527EAC;
+    border-radius: 35px;
+}
+.paraqueeltipoelijaunjuegoyserelaje > img{
+    width: 70%;
+    aspect-ratio: 1/1;
+}
+.tdnn{
+    text-decoration: none;
+    width: 37%;
+}
+.paraqueeltipoelijaunjuegoyserelaje > p {
+    font-size: 1.875em;
+}
+.menuprinc{
+    width: 100%;
+    border-width: 1px;
+    aspect-ratio: 517/82;
+    border-radius: 35px;
+}
+.menuprinc > p {
+    font-size: 2.75em;
+}
