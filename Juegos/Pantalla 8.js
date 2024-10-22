@@ -90,5 +90,5 @@ function reiniciar(){
     l = 0;
     m = 0;
     n = 0;
-    document.getElementById("caja").style.backgroundColor = "yellow";
+    document.getElementById("caja").style.backgroundColor = "#414141";
 }

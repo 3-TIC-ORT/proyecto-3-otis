@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+article{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.tdn{
+    width: 100%;
+    height: 20%;
+}
+.tdn > button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}

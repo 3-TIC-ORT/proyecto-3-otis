@@ -1,21 +1,56 @@
-body{
+.body{
+    display: flex;
+    flex-direction: column;
+}
+.elmainreal{
+    height: 89%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+article{
+    width: 23%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.tdm{
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 31%;
+}
+main{
+    height: 100%;
+    width: 49%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-main{
+aside{
+    height: 100%;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.caja{
 display: flex;
-height: 50%;
+height: 82%;
 aspect-ratio: 1/1;
 flex-wrap: wrap;
-background-color: yellow;
+background-color: #414141;
 border-radius: 50%;
 }
 .cajaA{
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: brown;
+    background-color: #964665;
     display: flex;
     flex-wrap: wrap;
 }
@@ -23,7 +58,7 @@ border-radius: 50%;
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: #D35D5D;
     display: flex;
     flex-wrap: wrap;
 }
@@ -31,7 +66,7 @@ border-radius: 50%;
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: palegoldenrod;
+    background-color: #FF9274;
     display: flex;
     flex-wrap: wrap;
 }
@@ -39,14 +74,14 @@ border-radius: 50%;
     height: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: fuchsia;
+    background-color: #FFDE71;
     display: flex;
     flex-wrap: wrap;
 }
 .cajaE{
     height: 50%;
     aspect-ratio: 1/1;
-    background-color: green;
+    background-color: #FF7F50;
     border-radius: 50%;
     display: flex;
     flex-wrap: wrap;
@@ -54,6 +89,41 @@ border-radius: 50%;
 .cajaF{
     height: 50%;
     aspect-ratio: 1/1;
-    background-color: peru;
+    background-color: #FF812E;
     border-radius: 50%;
+}
+.button, .button1{
+    border: solid #1B4878 1px;
+    background-color: #85A5C7;
+    width: 69%;
+    border-radius: 35px;
+}
+.button > p, .button1 > p{
+    font-size: 3em;
+}
+.button{
+    height: 100%;
+}
+.button1{
+    height: 24%;
+}
+.dialogo{
+    width: 98%;
+    height: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.globodetexto{
+    width: 100%;
+    height: 100%;
+}
+.loquesedice{
+    width: 26%;
+    position: absolute;
+    font-size: 2em;
+    margin-left: 1%;
+}
+.otishabla{
+    height: 35%;
 }
