@@ -1,0 +1,39 @@
+.minoanimacion{
+    width: 90px;
+    aspect-ratio: 1/1;
+    background-color: brown;
+    border-radius: 0px;
+    border: 0px solid black; 
+}
+.mianimacion{
+    animation-duration: 8s;
+    animation-name: experimento;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+@keyframes experimento{
+    0%{
+        width: 90px;
+        aspect-ratio: 1/1;
+        background-color: brown;
+        border-radius: 0px;
+        border: 0px solid black;
+    }
+    40%{
+        border: 70px solid black;
+        width: 170px;
+        aspect-ratio: 1.5/4;
+    }
+    60%{
+        border: 70px solid black;
+        width: 170px;
+        aspect-ratio: 1.5/4;
+    }
+    100%{
+        width: 100px;
+        aspect-ratio: 2/9;
+        background-color: green;
+        border-radius: 100%;
+        border: 35px solid peru;
+    }
+}
