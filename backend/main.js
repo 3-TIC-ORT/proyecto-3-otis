@@ -1,7 +1,7 @@
 import  Express  from "express";
 import  argon2 from "argon2";
 import { User } from "./model/modeloUser.js";
-import { hash } from "argon2";
+//import { hash } from "argon2";
 import express  from "express";
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -17,7 +17,6 @@ const app = Express()
 app.use(express.json());
 app.use(cors());
 
-
 app.post("/enviar-datos", async (req, res) => { // endpoint
  
     const datosUser = req.body
@@ -25,7 +24,6 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
     const usuarioRegistrado = datosUser.usuario
     const contraseñaRegistrada = datosUser.contraseña
-
 
     try {
         const hashContraseña = await argon2.hash(contraseñaRegistrada);
@@ -43,7 +41,7 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
 });
 
-async function entrarAMiUsuario (req, res) {
+/* async function entrarAMiUsuario (req, res) {
     try {
         const [rows] = await db.execute('SELECT password FROM users WHERE usuario = ?', [usuario]);
         
@@ -68,7 +66,7 @@ async function entrarAMiUsuario (req, res) {
         console.error('no anduvbvbvo', err);
         res.status(500).json({ error: 'funciono mal pipipipi' }); 
       }
-}
+} */
 
 
 app.get("/", async (req, res) => {
