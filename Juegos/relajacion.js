@@ -12,10 +12,10 @@ function activaranimacion(){
         document.getElementById('inala').className = 'inalacontieneexala';
     }, 3000);
     setTimeout(() =>{
-        document.getElementById('inala').className = 'inalacontieneexala';
+        document.getElementById('contiene').className = 'inalacontieneexala';
     }, 9000);
     setTimeout(() => {
-        document.getElementById('inala').className = 'inalacontieneexala';
+        document.getElementById('exala').className = 'inalacontieneexala';
         document.getElementById("loanimo").className = "minoanimacion";
         document.getElementById("amn").className = "noamn";
         numerodeanimaciones = 0;
