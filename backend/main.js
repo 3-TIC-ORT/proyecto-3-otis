@@ -1,7 +1,7 @@
 import  Express  from "express";
 import  argon2 from "argon2";
 import { User } from "./model/modeloUser.js";
-//import { hash } from "argon2";
+import { hash } from "argon2";
 import express  from "express";
 import path from 'path';
 import { fileURLToPath } from "url";
