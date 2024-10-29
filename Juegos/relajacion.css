@@ -1,39 +1,284 @@
+
+body{
+    flex-direction: column;
+    display: flex;
+    overflow-x: hidden;
+}
+.elresto{
+height: 89%;
+width: 100%;   
+display: flex;
+flex-direction: row; 
+}
+article{
+    height: 89%;
+    width: 27.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+article > section{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+article > section > img{
+    width: 100%;
+    height: 100%;
+}
+article > section > p{
+    position: absolute;
+    width: 21.8%;
+    margin-left: 2%;
+    font-size: 2em;
+}
+article > img{
+    width: 69%;
+}
+.holisis{
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 .minoanimacion{
-    width: 90px;
+    width: 14%;
     aspect-ratio: 1/1;
-    background-color: brown;
-    border-radius: 0px;
-    border: 0px solid black; 
+    background-color: #85A5C7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+.noamn{
+    width: 5%;
+    aspect-ratio: 1/1;
+    background-color: #0B3868;
+    border-radius: 100%;
+    position: absolute;
+}
+.amn{
+    animation-duration: 18s;
+    animation-name: pelotachiquita😡;
+    animation-direction: normal;
+    animation-iteration-count: 1;
 }
 .mianimacion{
-    animation-duration: 8s;
+    width: 14%;
+    aspect-ratio: 1/1;
+    background-color: #85A5C7;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    animation-duration: 18s;
     animation-name: experimento;
     animation-direction: alternate;
     animation-iteration-count: 2;
 }
 @keyframes experimento{
-    0%{
-        width: 90px;
+    from{
+        width: 14%;
         aspect-ratio: 1/1;
-        background-color: brown;
+        background-color: #85A5C7;
         border-radius: 0px;
-        border: 0px solid black;
-    }
-    40%{
-        border: 70px solid black;
-        width: 170px;
-        aspect-ratio: 1.5/4;
-    }
-    60%{
-        border: 70px solid black;
-        width: 170px;
-        aspect-ratio: 1.5/4;
-    }
-    100%{
-        width: 100px;
-        aspect-ratio: 2/9;
-        background-color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 100%;
-        border: 35px solid peru;
+    }
+    16.66666666666666666666666%{
+        width: 70%;
+        aspect-ratio: 1/1;
+        background-color: #85A5C7;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+    50%{
+        width: 70%;
+        aspect-ratio: 1/1;
+        background-color: #85A5C7;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+    to{
+        width: 14%;
+        aspect-ratio: 1/1;
+        background-color: #85A5C7;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+}
+
+@keyframes pelotachiquita😡{
+    from{
+        width: 5%;
+        aspect-ratio: 1/1;
+        background-color: #0B3868;
+        border-radius: 100%;
+        position: absolute;
+    }
+    16.66666666666666666666666%{
+        width: 25%;
+        aspect-ratio: 1/1;
+        background-color: #0B3868;
+        border-radius: 100%;
+        position: absolute;
+    }
+    50%{
+        width: 5%;
+        aspect-ratio: 1/1;
+        background-color: #0B3868;
+        border-radius: 100%;
+        position: absolute;
+    }
+    to{
+        width: 5%;
+        aspect-ratio: 1/1;
+        background-color: #0B3868;
+        border-radius: 100%;
+        position: absolute;
+    }
+
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.tdnn{
+    width: 65%;
+    height: 31%;
+    text-decoration: none;
+}
+.tdnn > button{
+    width: 100%;
+    height: 100%;
+}
+.animacioncomienza{
+    height: 25%;
+    width: 65%;
+}
+.animacioncomienza, .tdnn > button{
+     border-radius: 35px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.animacioncomienza > p, .tdnn > button > p{
+    font-size: 3em;
+}
+.textitos{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circulitos{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inalacontieneexala, .contiene, .exala{
+    position: absolute;
+    font-size: 3em;
+    right: -30%;
+}
+.inala{
+animation-name: inala;
+animation-duration: 3s;
+}
+@keyframes inala{
+    from{
+    position: absolute;
+    font-size: 3em;
+    right: -30%;
+    }
+    33.3333333333%{  
+    position: absolute;
+    font-size: 3em;
+    right: 45%;
+    }
+    66.666666666%{
+        position: absolute;
+        font-size: 3em;
+        right: 55%;
+    }
+    to{
+    position: absolute;
+    font-size: 3em;
+    right: 130%;
+    }
+}
+.contiene{
+animation-name: contiene;
+animation-duration: 6s;
+animation-delay: 3s;
+}
+@keyframes contiene{
+    from{
+    position: absolute;
+    font-size: 3em;
+    right: -30%;
+    }
+    16.6666666666666%{  
+    position: absolute;
+    font-size: 3em;
+    right: 45%;
+    }
+    83.3333333333%{
+        position: absolute;
+        font-size: 3em;
+        right: 55%;
+    }
+    to{
+    position: absolute;
+    font-size: 3em;
+    right: 130%;
+    }
+}
+.exala{
+animation-name: exala;
+animation-duration: 6s;
+animation-delay: 9s;
+}
+@keyframes exala{
+    from{
+    position: absolute;
+    font-size: 3em;
+    right: -30%;
+    }
+    11.1111111111%{  
+    position: absolute;
+    font-size: 3em;
+    right: 45%;
+    }
+    88.888888888888%{
+        position: absolute;
+        font-size: 3em;
+        right: 55%;
+    }
+    to{
+    position: absolute;
+    font-size: 3em;
+    right: 130%;
     }
 }

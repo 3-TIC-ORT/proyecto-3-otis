@@ -11,7 +11,9 @@ function ahorasi(){
 }
 }
 let j = 0;
+setTimeout(() => {
 document.getElementById("caja").addEventListener("mouseenter", ahorasi);
+}, 1000);
 function cajaA(){
     if(this.children.length === 0){
     this.style.backgroundColor = "transparent";
