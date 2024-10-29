@@ -1,5 +1,8 @@
 .tituloEintroducción{
       width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
   }
   .explicacioncont{
     display: flex;
@@ -8,11 +11,6 @@
   .explicacion{
     width: 348px;
   height: 180px;
-  }
-  .explicaciontexto{
-    font-size: 30px;
-    color: #1B4878;
-    font-family: "Lilita One";
   }
   .saludo{
     font-size: 64px;
@@ -26,9 +24,10 @@
   }
   .rayita{
     width: 3px;
-    height: 10%;
+    height: 13.5%;
     background-color: black;
-  align-self: center;
+    align-self: center;
+    width: 2%;
   }
   .crear{
     width:300px;
@@ -39,7 +38,7 @@
     font-size: 35px;
   }
   .contenedor{
-    height: 78%;
+    height: 73%;
     aspect-ratio: 1/1;
     border-radius: 25px;
     background-color: #B0C2D6;
@@ -47,6 +46,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border: #1B4878 3px solid;
   }
   .centro{
       display: flex;
@@ -55,6 +55,10 @@
   }
   .regresar{
       width: 28%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
   .no{
     background-color: #C78486;
@@ -62,4 +66,38 @@
     top: 0px;
     width: 35%;
     height: 9%;
+  }
+  .tdnn{
+    height: 29%;
+    text-decoration: none;
+  }
+  .tdnn > button{
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: #A8B7C6;
+    border: #15365A, 10px, solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tdnn > button > img{
+    width: 45%;
+  }
+  .tdnn > button > p{
+    font-size: 3em;
+    color: #456383;
+  }
+  .entrar{
+    width: 43%;
+    aspect-ratio: 233/63;
+    border-radius: 8px;
+    border: #304A66 1px solid;
+    color: #1B4878;
+  }
+  .entrar > p{
+    font-family: "Lilita One";
+    font-size: 1.5625em;
+    color: #1B4878;
   }

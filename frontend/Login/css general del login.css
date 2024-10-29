@@ -1,5 +1,5 @@
 body{
-    height: 90vh;
+    height: 100vh;
     background-color: #618fbf;
   }
   .todo{
@@ -11,12 +11,13 @@ body{
   background-color: #618FBF;
   }
   .explicaciontexto{
-    font-size: 30px;
+    width: 85%;
+    font-size: 2.3125em;;
     color: #1B4878;
     font-family: "Lilita One";
   }
   .saludo{
-    font-size: 64px;
+    font-size: 4em;
     color: #1B4878;
   font-family: "Lilita One";
   }
@@ -25,3 +26,29 @@ body{
   .tdn{
     text-decoration: none;
     }
+  .contenedor > h2{
+    font-size: 3em;
+    font-family: "Lilita One";
+    color: #184678;
+  }
+  .contenedor > div > P{
+    font-size: 1.5625em;
+  }
+  .contenedor > div{
+    width: 79%;
+    height: 23%;
+  }
+  .contenedor > div > input{
+    width: 100%;
+    height: 73%;
+    background-color: transparent;
+    border: #304A66 1px solid;
+    border-radius: 8px;
+  }
+  .otis{
+    width: 45%;
+  }
+  .imagenysaludo{
+    width: 100%;
+    height: 33%;
+  }
