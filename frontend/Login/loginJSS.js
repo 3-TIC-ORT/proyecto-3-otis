@@ -1,6 +1,6 @@
 let nuevacuenta = {
-usuario: "",
-contraseña: "",
+    usuario: "",
+    contraseña: "",
 };
 document.getElementById("crear").addEventListener("click", secreounacuenta)
 function secreounacuenta (){
@@ -9,5 +9,21 @@ function secreounacuenta (){
     postData("nuevousuario", nuevacuenta, repetido);
 }
 function repetido(){
-    alert("este usuario ya existe, elige otro nombre");
+  if(data === false){
+    document.getElementById("no").style.opacity = "1";
+    document.getElementById("nomensaje").innerHTML = "Ese nombre de usuario ya existe, elije otro";
+    setTimeout (() => {
+        document.getElementById("no").style.opacity = "0";
+        document.getElementById("nomensaje").innerHTML = "";
+    }, 3000);
+    } else{
+        document.getElementById("no").style.opacity = "1";
+        document.getElementById("no").style.backgroundColor = "green";
+        document.getElementById("nomensaje").innerHTML = "Ya se creo su cuenta, felicidades";
+        setTimeout (() => {
+            document.getElementById("no").style.opacity = "0";
+            document.getElementById("no").style.backgroundColor = "#C78486";
+            document.getElementById("nomensaje").innerHTML = "";
+        }, 3000);
+    }
 }

@@ -10,15 +10,15 @@ function activaranimacion(){
     document.getElementById('exala').className = 'exala';
     setTimeout(() =>{
         document.getElementById('inala').className = 'inalacontieneexala';
-    }, 3000);
+    }, 4000);
     setTimeout(() =>{
         document.getElementById('contiene').className = 'inalacontieneexala';
-    }, 9000);
+    }, 11000);
     setTimeout(() => {
         document.getElementById('exala').className = 'inalacontieneexala';
         document.getElementById("loanimo").className = "minoanimacion";
         document.getElementById("amn").className = "noamn";
         numerodeanimaciones = 0;
-        }, 18000);
+        }, 19000);
     }
 }
