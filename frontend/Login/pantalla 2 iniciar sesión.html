@@ -6,6 +6,7 @@
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="Pantalla 2 crear cuenta.css" />
     <link rel="stylesheet" href="css general del login.css">
+    <link rel="stylesheet" href="../../css general.css"">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
@@ -13,39 +14,37 @@
 <body>
 <div class="todo">
     <div class="tituloEintroducción">
+        <div>
               <h1 class="saludo">¡Hola,</h1>
-               <h1 class="saludo">soy OTIS!</h1>   
-        <div class="explicacioncont">
-            <div class="explicacion">
-                <p class="explicaciontexto" style="width: 348px;">Apretaste “Iniciar sesión”, aqui tienes que ingresar tu usuario y contraseña, si aun no tienes una cuenta, puedes volver atras con el boton de la derecha</p>
-            </div>
-        </div> 
+               <h1 class="saludo">soy OTIS!</h1> 
+      </div>
+                <p class="explicaciontexto" id="prueba">Apretaste “Iniciar sesión”, aqui tienes que ingresar tu usuario y contraseña, si aun no tienes una cuenta, puedes volver atras con el boton de la derecha</p>
     </div>
 <section class="centro">
     <div class="rayita"></div>
         <div class="contenedor">  
             <h2>Iniciar Sesión</h2>
             <div>
-            <p>tu usuario</p>
+            <p>Tu usuario</p>
             <input type="text" id="usuario">
         </div>
         <div>
-        <p>tu contraseña</p>
+        <p>Tu contraseña</p>
         <input type="password" id="contraseña">
         </div>
 
-        <button id="entrar">entrar</button>
+        <button class="entrar" id="entrar">entrar</button>
         </div>
     <div class="rayita"></div>
 </section>
     <div class="regresar">
-     <a class="tdn" href="Pantalla 2.html">   <button>
-            <img src="" alt="regresar">
-            <p>regresar</p>
+     <a class="tdnn" href="Pantalla 2.html">   <button>
+            <img src="atras.png" alt="regresar">
+            <p>Atras</p>
         </button> 
      </a>      
     </div>
-    <div class="no"><p></p></div>
+    <div class="no" id="no"><p id="nomensaje"></p></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../../socket.js"></script>

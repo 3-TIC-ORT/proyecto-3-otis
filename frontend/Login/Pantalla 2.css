@@ -5,6 +5,9 @@
 .imagenYsaludo{
 display: flex;
 flex-direction: row;
+align-items: center;
+width: 81%;
+justify-content: space-between;
 }
 .explicacion{
   width: 533px;
@@ -13,13 +16,10 @@ justify-content:  center;
 height: 180px;
 }
 
-.otis{
-  width: 276px;
-}
-.rayita{
-  width: 1px;
-  height: 80%;
-  background-color: black;
+.rayitaa{
+  width: 0.8%;
+  height: 100%;
+  background-color: #1B4878;
 align-self: center;
 }
 
@@ -27,6 +27,8 @@ align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  width: 49%;
 }
 
 .concuenta{
@@ -58,4 +60,12 @@ align-self: center;
   font-family: "Lilita One";
   margin: 0px;
   padding: 0px;
+}
+
+.tituloEintroducción{
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }

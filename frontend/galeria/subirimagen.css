@@ -18,6 +18,19 @@ justify-content: center;
 }
 .elcosoeze > main{
     width: 36%;
+    display: flex;
+    flex-direction: column;
+}
+.elcosoeze > main > main{
+    height: 9%;
+    width: 100%;
+}
+.elcosoeze > main > div{
+    width: 100%;
+    height: 91%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .elcosoeze > aside{
     width: 44%;
@@ -53,4 +66,21 @@ justify-content: center;
 }
 .otis{
     width: 39%;
+}
+.subirimagen{
+    height: 51%;
+    aspect-ratio: 358/327;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #527EAC;
+    border: #1B4878 1px solid;
+    border-radius: 35px;
+}
+.subirimagen > img{
+    width: 60%;
+}
+.subirimagen > p{
+    font-size: 2em;
 }

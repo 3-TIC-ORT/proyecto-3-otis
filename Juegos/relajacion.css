@@ -12,7 +12,7 @@ flex-direction: row;
 }
 article{
     height: 89%;
-    width: 27.5%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,16 +52,18 @@ article > img{
     justify-content: center;
     align-items: center;
     border-radius: 100%;
+    position: relative;
+    bottom: 5%;
 }
 .noamn{
-    width: 5%;
+    width: 5vw;
     aspect-ratio: 1/1;
     background-color: #0B3868;
     border-radius: 100%;
     position: absolute;
 }
 .amn{
-    animation-duration: 18s;
+    animation-duration: 19s;
     animation-name: pelotachiquita😡;
     animation-direction: normal;
     animation-iteration-count: 1;
@@ -75,10 +77,11 @@ article > img{
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    animation-duration: 18s;
+    animation-duration: 19s;
     animation-name: experimento;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
+    animation-direction: normal;
+    position: relative;
+    bottom: 5%;
 }
 @keyframes experimento{
     from{
@@ -90,8 +93,10 @@ article > img{
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        position: relative;
+        bottom: 5%;
     }
-    16.66666666666666666666666%{
+    21.05%{
         width: 70%;
         aspect-ratio: 1/1;
         background-color: #85A5C7;
@@ -100,8 +105,10 @@ article > img{
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        position: relative;
+        bottom: 5%;
     }
-    50%{
+    57.89%{
         width: 70%;
         aspect-ratio: 1/1;
         background-color: #85A5C7;
@@ -110,6 +117,8 @@ article > img{
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        position: relative;
+        bottom: 5%;
     }
     to{
         width: 14%;
@@ -120,33 +129,35 @@ article > img{
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        position: relative;
+        bottom: 5%;
     }
 }
 
 @keyframes pelotachiquita😡{
     from{
-        width: 5%;
+        width: 5vw;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
         position: absolute;
     }
-    16.66666666666666666666666%{
-        width: 25%;
+    21.05%{
+        width: 25vw;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
         position: absolute;
     }
-    50%{
-        width: 5%;
+    57.89%{
+        width: 5vw;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
         position: absolute;
     }
     to{
-        width: 5%;
+        width: 5vw;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
@@ -160,6 +171,7 @@ aside{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    width: 23.5%;
 }
 .tdnn{
     width: 65%;
@@ -204,7 +216,7 @@ aside{
 }
 .inala{
 animation-name: inala;
-animation-duration: 3s;
+animation-duration: 4s;
 }
 @keyframes inala{
     from{
@@ -212,12 +224,12 @@ animation-duration: 3s;
     font-size: 3em;
     right: -30%;
     }
-    33.3333333333%{  
+    25%{  
     position: absolute;
     font-size: 3em;
     right: 45%;
     }
-    66.666666666%{
+    75%{
         position: absolute;
         font-size: 3em;
         right: 55%;
@@ -230,8 +242,8 @@ animation-duration: 3s;
 }
 .contiene{
 animation-name: contiene;
-animation-duration: 6s;
-animation-delay: 3s;
+animation-duration: 7s;
+animation-delay: 4s;
 }
 @keyframes contiene{
     from{
@@ -239,12 +251,12 @@ animation-delay: 3s;
     font-size: 3em;
     right: -30%;
     }
-    16.6666666666666%{  
+    14.28%{  
     position: absolute;
     font-size: 3em;
     right: 45%;
     }
-    83.3333333333%{
+    85.71%{
         position: absolute;
         font-size: 3em;
         right: 55%;
@@ -257,8 +269,8 @@ animation-delay: 3s;
 }
 .exala{
 animation-name: exala;
-animation-duration: 6s;
-animation-delay: 9s;
+animation-duration: 8s;
+animation-delay: 11s;
 }
 @keyframes exala{
     from{
@@ -266,12 +278,12 @@ animation-delay: 9s;
     font-size: 3em;
     right: -30%;
     }
-    11.1111111111%{  
+    12.5%{  
     position: absolute;
     font-size: 3em;
     right: 45%;
     }
-    88.888888888888%{
+    87.5%{
         position: absolute;
         font-size: 3em;
         right: 55%;
