@@ -9,21 +9,21 @@ function secreounacuenta (){
     postData("nuevousuario", nuevacuenta, repetido);
 }
 function repetido(){
-  if(data === false){
+  if(data === 0){
     document.getElementById("no").style.opacity = "1";
     document.getElementById("nomensaje").innerHTML = "Ese nombre de usuario ya existe, elije otro";
     setTimeout (() => {
         document.getElementById("no").style.opacity = "0";
-        document.getElementById("nomensaje").innerHTML = "";
+        document.getElementById("nomensajje").innerHTML = "";
     }, 3000);
     } else{
         document.getElementById("no").style.opacity = "1";
         document.getElementById("no").style.backgroundColor = "green";
-        document.getElementById("nomensaje").innerHTML = "Ya se creo su cuenta, felicidades";
+        document.getElementById("nomensajje").innerHTML = "Ya se creo su cuenta, felicidades";
         setTimeout (() => {
             document.getElementById("no").style.opacity = "0";
             document.getElementById("no").style.backgroundColor = "#C78486";
-            document.getElementById("nomensaje").innerHTML = "";
+            document.getElementById("nomensajje").innerHTML = "";
         }, 3000);
     }
 }

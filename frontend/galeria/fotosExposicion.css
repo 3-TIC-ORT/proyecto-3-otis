@@ -1,0 +1,58 @@
+.salir{
+    width: 10%;
+    height: 21%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border: #1B4878, 2px, solid;
+    border-left: none;
+    border-top: none;
+}
+.salir > img{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+main{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.siguiente{
+    height: 22%;
+    aspect-ratio: 1/1;
+    border: #1B4878, 3px, solid;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+.siguiente > p{
+    font-size: 9.375em;
+}
+section{
+    width: 59%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+section > img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: #1B4878, 10px, solid;
+    border-radius: 20px;
+}
+section > p{
+    font-size: 2.5em;
+    color: white;
+    margin: 9px;
+}
