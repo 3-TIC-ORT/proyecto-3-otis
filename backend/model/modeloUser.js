@@ -21,27 +21,5 @@ const User = sequelize.define("User", {
     timestamps: false,
 });
 
-//await Archivos.sync()    no es asi pero mepa que asi se crea si todavia no existe???
-const Archivos = sequelize.define("Archivos", {
-    videosSubidos: {
-    type:Sequelize.STRING,
-    allowNull: true
-    },
-    imagenesSubidas: {
-    type:Sequelize.STRING,
-    allowNull: true
-    },
-    audiosSubidos: {
-    type:Sequelize.STRING,
-    allowNull: true
-    },
-
-}, {
-    timestamps: false,
-});
-
-export { Archivos };
-
-
 
 export {User};

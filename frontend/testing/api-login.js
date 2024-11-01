@@ -32,3 +32,13 @@ async function sendData() {
     }
 } 
 
+
+
+
+// aca empiezo a probar subir un archivo
+
+let input = document.getElementById('input').value;
+const digitos = 3;
+
+división = input.substring(input.length - digitos);
+console.log(división);

@@ -41,7 +41,17 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
 });
 
-/* async function entrarAMiUsuario (req, res) {
+
+
+app.post("/entrar-a-la-sesión", async (req, res) => {
+   try {
+        const [rows] = await db.execute('SELECT password FROM users WHERE usuario = ?', [usuario]);
+        
+
+});
+
+/*
+ async function entrarAMiUsuario (req, res) {
     try {
         const [rows] = await db.execute('SELECT password FROM users WHERE usuario = ?', [usuario]);
         
@@ -66,12 +76,12 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
         console.error('no anduvbvbvo', err);
         res.status(500).json({ error: 'funciono mal pipipipi' }); 
       }
-} */
-
+} 
+*/
 
 app.get("/", async (req, res) => {
    res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
-  // await entrarAMiUsuario(req, res);
+  await entrarAMiUsuario(req, res);
 });
 
 app.get("/login", async (req, res) => {
