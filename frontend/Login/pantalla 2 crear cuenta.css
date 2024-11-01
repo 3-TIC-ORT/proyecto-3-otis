@@ -67,6 +67,14 @@
     width: 35%;
     height: 9%;
     opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .no > p{
+    font-size: 1.375em;
+    color: white;
+    font-family: "Inter";
   }
   .tdnn{
     height: 29%;

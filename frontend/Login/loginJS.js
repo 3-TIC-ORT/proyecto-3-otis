@@ -10,7 +10,7 @@ function seInicioSesion (){
     console.log(sesion);
 }
 function incorrecto (){
-    if(data === false){
+    if(data === 0){
     document.getElementById("no").style.opacity = "1";
     document.getElementById("nomensaje").innerHTML = "Error al iniciar usuario o contraseña";
     setTimeout (() => {

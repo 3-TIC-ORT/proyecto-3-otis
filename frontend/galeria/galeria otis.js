@@ -28,12 +28,12 @@ function queaparezcan(){
     }
 }
 function si (){
-   let laquegusto = document.getElementById(`img${this.value}`).src;
-   postData("legusto", laquegusto);
+   let imagen = document.getElementById(`img${this.value}`).src;
+   postData("imagenBuena", imagen);
    document.getElementById(`section${this.value}`).remove();
 }
 function no (){
-   let laquenogusto = document.getElementById(`img${this.value}`).src;
-   postData("nolegusto", laquenogusto);
+   let imagen = document.getElementById(`img${this.value}`).src;
+   postData("imagenMala", imagen);
    document.getElementById(`section${this.value}`).remove();
 }
