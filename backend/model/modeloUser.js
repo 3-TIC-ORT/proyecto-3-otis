@@ -22,5 +22,4 @@ const User = sequelize.define("User", {
 });
 
 
-
 export {User};
