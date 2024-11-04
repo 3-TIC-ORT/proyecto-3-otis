@@ -15,7 +15,7 @@ async function sendData() {
     try {
         let response = await fetch("http://localhost:3000/enviar-datos", {
             method: "POST",
-            headers: {
+            headers: { 
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ 
