@@ -1,6 +1,9 @@
 import express from "express";
-const router = express.Router();
+import argon2 from "argon2";
+import {user} from "./model/modeloUser"
 import { Archivos } from "./model/modeloArchivos";
+const router = express.Router();
+
 
 router.post('/', async (req, res) => {
     const { fileUrl, fileType, idusers } = req.body;
@@ -90,5 +93,31 @@ router.post('/toggleLike', async (req, res) => {
 }
 
 });
+
+
+router.post("/login", async (req, res) => {
+    const {usuario, contraseña} = req.body;
+    console.log (`intento de inicio de sesión para usuario: ${usuario}`);
+
+    try {
+        const usuarioEncontrado = await User.findOne({ where: { usuario }});
+        if (!usuarioEncontrado) {
+            console.log("Usuario no existe");
+            return res.status(404).send("usuario no existe/no se encontró");
+        }
+        const verificarContraseña = await argon2.verify(usuarioEncontrado.contraseña, contraseña);
+        if (!verificarContraseña){
+            console.log("contraseña incorrecta");
+            return res.status(401).send("contraseña incorrecta :P");
+        }
+
+        console.log("sesión iniciada con exito yay");
+        res.status(200).send("inicio de sesión exitosooo");
+    } catch (error) {
+        console.error("error en el proceso de iniciar sesión:", error);
+        res.status(500).send("error en el servidor");
+    }
+});
+
 
 export {rutas};
