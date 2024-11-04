@@ -84,7 +84,7 @@ aside > header > div{
     position: absolute;
 }
 .dialogodiv{
-width: 55.11%;
+width: 58%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -95,7 +95,7 @@ align-items: center;
 .dialogodiv > p{
     position: absolute;
     width: 21.875%;
-    margin-left: 2%;
+    margin-left: 1%;
     font-size: 2.1875em;
 }
 .tdnn{
@@ -108,7 +108,7 @@ align-items: center;
     width: 100%;
     height: 100%;
     border-width: 1px;
-    border-radius: 35px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
