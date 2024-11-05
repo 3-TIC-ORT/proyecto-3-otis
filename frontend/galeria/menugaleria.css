@@ -43,6 +43,10 @@ section{
     border: 1px #1B4878 solid;
     border-radius: 13%;
     background-color: #527EAC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .quehacer > p{
     color: white;
