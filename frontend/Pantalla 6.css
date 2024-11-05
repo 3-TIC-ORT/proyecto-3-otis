@@ -20,6 +20,10 @@
     border-width: 5px;
     border-radius: 13%;
     border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .OTIS{
     font-size: 60px;
@@ -30,7 +34,7 @@
     background-color: white;
     font-size: 20px;
 }
-.tdn{
+.tdnn{
     width: 20%;
     aspect-ratio: 1/1;
 }
