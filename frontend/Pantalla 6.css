@@ -20,6 +20,9 @@
     border-width: 5px;
     border-radius: 13%;
     border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .OTIS{
     font-size: 60px;
