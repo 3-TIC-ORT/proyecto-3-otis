@@ -1,0 +1,6 @@
+POST http://localhost:3000/testing/subirarchivos
+Content-Type: application/json
+
+{
+    "hola": "hola"
+}

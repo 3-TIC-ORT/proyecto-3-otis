@@ -2,7 +2,7 @@ document.getElementById('subirForm').addEventListener('submit', async (e) => {
 e.preventDefault();
 
 const fileUrl = document.getElementById('fileUrl').value;
-const fileType = getFileType(fileUrl);
+const fileType = tipoDeArchivo(fileUrl);
 
 if(!fileType){
     console.log("formato no valido");
@@ -10,7 +10,7 @@ if(!fileType){
 }
 
 try {
-    const respuesta = await fetch("http:localhost:3000/subirarchivos", {
+    const respuesta = await fetch("http://localhost:3000/subirarchivos", {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function renderImages(imageLinks) {
         if (link.includes('#noGusta')) return;
         const contenedorDeImagen = document.createElement('div');
         const img = document.createElement('img');
-        img.scr = link.replace('#gusta','').replace('#noGusta','');
+        img.src = link.replace('#gusta','').replace('#noGusta','');
         img.alt = 'imagen subida';
         img.style.width = '150px'; // cambiar a lo que quiera iair
 
@@ -92,7 +92,7 @@ function renderVideos(videoLinks) {
         if (link.includes('#noGusta')) return;
         const contenedorDeVideo = document.createElement('div');
         const video = document.createElement('video');
-        video.scr = link.replace('#gusta','').replace('#noGusta','');
+        video.src = link.replace('#gusta','').replace('#noGusta','');
         video.controls = true;
         video.style.width = '150px'; // cambiar a lo que quiera iair
 
@@ -113,7 +113,7 @@ function renderAudios(audioLinks) {
     galeriadeaudio.innerHTML = '';
 
     audioLinks.forEach((link, index) => {
-        if (link.includes('"noGusta')) return;
+        if (link.includes('#noGusta')) return;
         const contenedorDeAudio = document.createElement('div');
         const audio = document.createElement('audio');
         audio.scr = link;
@@ -134,13 +134,13 @@ function renderAudios(audioLinks) {
 
 async function toggleLike(fileType, fileIndex) {
     try {
-        const respuestaa = await fetch('http://localhost:3000/upload/toggleLike', {
+        const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
             method: 'POST',
-            headers: {'Content-Type': 'aplication/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({idusers: 1, fileType, fileIndex }),
         });
 
-        const data = await response.json();
+        const data = await respuesta.json();
         console.log(data.message);
         loadUserFiles(1);
     } catch (error) {
