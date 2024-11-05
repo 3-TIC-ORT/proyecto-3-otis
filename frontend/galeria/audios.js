@@ -1,6 +1,6 @@
 fetchData("audiosSubidos", ponerlosaudios);
 function ponerlosaudios(){
-    for(let i = 1; i < DataTransfer.length; i++){
+    for(let i = 1; i < data.length; i++){
        let item = document.createElement("audio");
        item.id = `audio${i}`;
        item.src = data[i];
