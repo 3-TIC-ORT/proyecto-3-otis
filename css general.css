@@ -64,9 +64,13 @@ body{
 }
 .perfboton{
     border-right: 0ch;
+    height: 100%;
+}
+.sub-arriba > .tdn{
+    height: 100%;
 }
 .perfil{
-    width: 32%;
+    height: 59%;
 }
 .tdn, .tdnn{
     text-decoration: none;
