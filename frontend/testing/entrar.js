@@ -2,7 +2,7 @@ const botonLogin = document.getElementById("botonLogin");
 
 botonLogin.addEventListener("click", iniciarSesion);
 
-async function iniciarSesión() {
+async function iniciarSesion() {
     const usuario = document.getElementById("usuario").value;
     const contraseña = document.getElementById("contraseña").value;
     console.log("intento de inicio de sesión:", usuario);
@@ -24,3 +24,6 @@ async function iniciarSesión() {
             console.log("error de conexion waaaa:", error);
     }
 }
+
+
+export {iniciarSesion};
