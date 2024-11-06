@@ -5,6 +5,7 @@ import { User } from "./modeloUser.js";
 const Archivos = sequelize.define("Archivos", {
     idusers: {
     type:Sequelize.INTEGER,
+    primaryKey: true,
     allowNull: false, 
     },
     videosSubidos: {
@@ -36,6 +37,6 @@ const Archivos = sequelize.define("Archivos", {
     timestamps: false,
 });
 
-User.idusers = Archivos.idusers
+User.hasOne(Archivos, { foreignKey: 'idusers' }); // 
 
 export { Archivos };

@@ -7,7 +7,8 @@ import path from 'path';
 import { fileURLToPath } from "url";
 import { dirname } from 'path';
 import cors from "cors";
-import { rutas } from "./rutas.js";
+import { router } from "./rutas.js";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,8 +18,9 @@ const app = Express()
 
 app.use(express.json());
 app.use(cors());
+// app.use('/testing', router);
 
-app.use("/api/usuarios", rutas);
+app.use("/api/usuarios", router);
 
 app.post("/enviar-datos", async (req, res) => { // endpoint
  
@@ -50,8 +52,17 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/login", async (req, res) => {
-    entrarAMiUsuario()
+    res.sendFile(path.join(__dirname, '../frontend/testing/entrar.html'));
 });
+
+app.get("/subirarchivos", async (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/testing/verificación.html'));
+});
+
+app.post("/subirarchivos", async (req, res) => {
+    
+
+})
 
 app.listen(3000, () => {
     console.log("servidor escuchando puerto 3000 YUPII");

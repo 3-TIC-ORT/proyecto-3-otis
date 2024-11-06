@@ -6,7 +6,6 @@ const sequelize = new Sequelize('otis', 'root', '123456789', {
     port: 3306,
 })
 
-app.use('/upload', rutas);
 
 sequelize.authenticate()
     .then(() => {

@@ -27,7 +27,7 @@
             console.log("front: " + contraseña)
 
             try{
-            let response = await fetch("/enviar-datos", {
+            let response = await fetch("http://localhost:3000/enviar-datos", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

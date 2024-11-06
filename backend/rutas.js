@@ -1,11 +1,11 @@
 import express from "express";
 import argon2 from "argon2";
-import {user} from "./model/modeloUser"
-import { Archivos } from "./model/modeloArchivos";
+import {User} from "./model/modeloUser.js";
+import { Archivos } from "./model/modeloArchivos.js";
 const router = express.Router();
 
 
-router.post('/', async (req, res) => {
+router.post('/subirarchivos', async (req, res) => {
     const { fileUrl, fileType, idusers } = req.body;
 
     if (!fileUrl || !fileType || !idusers){
@@ -119,5 +119,8 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// router.post('/subirarchivos', async (req, res) => {
+//     res.
+// });
 
-export {rutas};
+export {router};
