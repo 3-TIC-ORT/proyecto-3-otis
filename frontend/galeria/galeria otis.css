@@ -19,6 +19,11 @@ width: 39%;
     position: relative;
     left: 2%;
 }
+.tdn > button{
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
 
 .volveralagaleria > p, .presentagaleria > p{
     font-size: 2.6875em;
