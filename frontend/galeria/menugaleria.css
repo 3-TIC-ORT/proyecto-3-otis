@@ -20,7 +20,7 @@ section{
 }
 .dialogo{
     position: absolute;
-    font-size: 32px;
+    font-size: 2em;
     width: 25%;
     margin-left: 2%;
 }
