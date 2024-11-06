@@ -15,13 +15,12 @@ body{
     height: 100%;
 }
 main{
-    width: 52%;
+    height: 78%;
     aspect-ratio: 4/3;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-content: space-around;
-    margin-bottom: 1%;
 }
 .ficha{
     width: 21%;
@@ -37,29 +36,36 @@ main{
 }
 .asided{
     width: 43%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .dialogoyglobo{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 62%;
+    width: 59%;
 }
 .globodetexto{
     width: 100%;
+    z-index: 0;
 }
 .dialogo{
     position: absolute;
-    width: 20%;
+    width: 90%;
     margin-left: 2%;
     margin-bottom: 1%;
     font-size: 30px;
+    z-index: 1;
 }
 .otis{
-    width: 40%;
+    width: 37%;
 }
 .cambiandoestilos{
     width: 10%;
     aspect-ratio: 1/1;
+    z-index: 2;
+    position: relative;
 }
 .confest{
     width: 100%;
@@ -191,4 +197,18 @@ main{
 }
 .asided > div > a > button{
     height: 100%;
+}
+.dialogoyglobo, .otis{
+    position: relative;
+}
+.arroba{
+    width: 100%;
+    height: 19%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom-width: 11px;
+    border-bottom-color: #1B4878;
+    border-bottom-style: solid;
 }

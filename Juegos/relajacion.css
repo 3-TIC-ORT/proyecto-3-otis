@@ -5,7 +5,7 @@ body{
     overflow-x: hidden;
 }
 .elresto{
-height: 89%;
+height: 78%;
 width: 100%;   
 display: flex;
 flex-direction: row; 
@@ -53,7 +53,7 @@ article > img{
     align-items: center;
     border-radius: 100%;
     position: relative;
-    bottom: 5%;
+    top: 3%;
 }
 .noamn{
     width: 5vw;
@@ -81,7 +81,7 @@ article > img{
     animation-name: experimento;
     animation-direction: normal;
     position: relative;
-    bottom: 5%;
+    top: 3%;
 }
 @keyframes experimento{
     from{
@@ -94,7 +94,7 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
     21.05%{
         width: 70%;
@@ -106,7 +106,7 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
     57.89%{
         width: 70%;
@@ -118,7 +118,7 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
     to{
         width: 14%;
@@ -130,7 +130,7 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
 }
 
