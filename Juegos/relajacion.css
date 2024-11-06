@@ -5,10 +5,11 @@ body{
     overflow-x: hidden;
 }
 .elresto{
-height: 89%;
+height: 78%;
 width: 100%;   
 display: flex;
 flex-direction: row; 
+justify-content: space-between;
 }
 article{
     height: 89%;
@@ -17,6 +18,7 @@ article{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 2%;
 }
 article > section{
     width: 100%;
@@ -39,13 +41,13 @@ article > img{
     width: 69%;
 }
 .holisis{
-    width: 49%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 .minoanimacion{
-    width: 14%;
+    height: 20%;
     aspect-ratio: 1/1;
     background-color: #85A5C7;
     display: flex;
@@ -53,10 +55,10 @@ article > img{
     align-items: center;
     border-radius: 100%;
     position: relative;
-    bottom: 5%;
+    top: 3%;
 }
 .noamn{
-    width: 5vw;
+    height: 10vh;
     aspect-ratio: 1/1;
     background-color: #0B3868;
     border-radius: 100%;
@@ -69,7 +71,7 @@ article > img{
     animation-iteration-count: 1;
 }
 .mianimacion{
-    width: 14%;
+    height: 40%;
     aspect-ratio: 1/1;
     background-color: #85A5C7;
     border-radius: 0px;
@@ -81,11 +83,11 @@ article > img{
     animation-name: experimento;
     animation-direction: normal;
     position: relative;
-    bottom: 5%;
+    top: 3%;
 }
 @keyframes experimento{
     from{
-        width: 14%;
+        height: 20%;
         aspect-ratio: 1/1;
         background-color: #85A5C7;
         border-radius: 0px;
@@ -94,10 +96,10 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
     21.05%{
-        width: 70%;
+        height: 80%;
         aspect-ratio: 1/1;
         background-color: #85A5C7;
         border-radius: 0px;
@@ -106,10 +108,10 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
     57.89%{
-        width: 70%;
+        height: 80%;
         aspect-ratio: 1/1;
         background-color: #85A5C7;
         border-radius: 0px;
@@ -118,10 +120,10 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
     to{
-        width: 14%;
+        height: 20%;
         aspect-ratio: 1/1;
         background-color: #85A5C7;
         border-radius: 0px;
@@ -130,34 +132,34 @@ article > img{
         align-items: center;
         border-radius: 100%;
         position: relative;
-        bottom: 5%;
+        top: 3%;
     }
 }
 
 @keyframes pelotachiquita😡{
     from{
-        width: 5vw;
+        height: 10vh;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
         position: absolute;
     }
     21.05%{
-        width: 25vw;
+        height: 40vh;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
         position: absolute;
     }
     57.89%{
-        width: 5vw;
+        height: 10vh;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
         position: absolute;
     }
     to{
-        width: 5vw;
+        height: 10vh;
         aspect-ratio: 1/1;
         background-color: #0B3868;
         border-radius: 100%;
