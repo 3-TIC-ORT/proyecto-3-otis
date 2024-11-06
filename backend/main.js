@@ -19,6 +19,8 @@ const app = Express()
 app.use(express.json());
 app.use(cors());
 // app.use('/testing', router);
+app.use(express.static(path.join(__dirname, 'frontend/testing')));
+
 
 app.use("/api/usuarios", router);
 
@@ -61,8 +63,11 @@ app.get("/subirarchivos", async (req, res) => {
 
 app.post("/subirarchivos", async (req, res) => {
     
+});
 
-})
+app.post("/login", async (req, res) => {
+   iniciarSesion();
+});
 
 app.listen(3000, () => {
     console.log("servidor escuchando puerto 3000 YUPII");
