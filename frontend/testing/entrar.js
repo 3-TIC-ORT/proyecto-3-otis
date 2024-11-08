@@ -1,6 +1,8 @@
-const botonLogin = document.getElementById("botonLogin");
+ document.addEventListener("DOMContentLoaded", () => {
+     const botonLogin = document.getElementById("botonLogin");
+     console.log(botonLogin); 
+ });
 
-botonLogin.addEventListener("click", iniciarSesion);
 
 async function iniciarSesion() {
     const usuario = document.getElementById("usuario").value;
@@ -26,4 +28,6 @@ async function iniciarSesion() {
 }
 
 
-export {iniciarSesion};
+//const btnLogin = document.getElementById("botonLogin");
+console.log(botonLogin); 
+botonLogin.addEventListener("click", iniciarSesion);

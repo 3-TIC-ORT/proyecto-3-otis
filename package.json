@@ -5,7 +5,8 @@
     "express": "^4.19.2",
     "mysql2": "^3.11.0",
     "nodemon": "^3.1.4",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "soquetic": "^1.2.6"
   },
   "type": "module",
   "name": "rs",
