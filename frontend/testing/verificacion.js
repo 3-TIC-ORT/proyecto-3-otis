@@ -10,13 +10,15 @@ if(!fileType){
 }
 
 try {
-    const respuesta = await fetch("http://localhost:3000/subirarchivos", {
-        method: 'post',
+    console.log('hoa')
+    let response = await fetch("http://localhost:3000/subirarchivospost", {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({fileUrl, fileType})
     });
+
     if (response.ok) {
         console.log("archivo subido");
     } else {
@@ -28,17 +30,15 @@ try {
 
 });
 
-
 function tipoDeArchivo(url) {
-    const esImagen = /\.(jpg|png|gif)$/;
-    const esAudio = /\.(mp3|wav)$/;
-    const esVideo = /\.(mp4)$/;
+    const esImagen = /\.(jpg|png|gif)$/i; // bandera `i` al final
+    const esAudio = /\.(mp3|wav)$/i;
+    const esVideo = /\.(mp4)$/i;
 
     if (esImagen.test(url)) return "image";
     if (esAudio.test(url)) return "audio";
     if (esVideo.test(url)) return "video";
     return null;
-
 }
 
 
@@ -156,4 +156,5 @@ function loadUserFiles(idusers){
         renderVideos(files.videosSubidos);
     });
 }
+
 

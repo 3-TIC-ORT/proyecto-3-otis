@@ -62,8 +62,8 @@ app.get("/subirarchivos", async (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/verificación.html'));
 });
 
-app.post("/subirarchivos", async (req, res) => {
-    
+app.post("/subirarchivospost", async (req, res) => {
+    res.send('hola')
 });
 
 app.post("/login", async (req, res) => {
