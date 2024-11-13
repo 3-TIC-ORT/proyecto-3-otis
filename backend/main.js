@@ -73,3 +73,10 @@ app.post("/login", async (req, res) => {
 app.listen(3000, () => {
     console.log("servidor escuchando puerto 3000 YUPII");
 });
+
+app.get("/entrar", async (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/Login/pantalla 2 iniciar sesión.html'));
+});
+app.post('/subirarchivospost', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/testing/verificacion.html'));
+});
