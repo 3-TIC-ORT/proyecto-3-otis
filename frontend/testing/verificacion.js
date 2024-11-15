@@ -1,6 +1,6 @@
 function manejoDeArchivos(){
 
-    const idusers = idBusqueda
+    const idusers = id400
 
     document.getElementById('subirForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -8,19 +8,19 @@ function manejoDeArchivos(){
         const fileUrl = document.getElementById('fileUrl').value;
         const fileType = tipoDeArchivo(fileUrl);
 
-        if(!fileType){
-            console.log("formato no valido");
+        if (!fileType) {
+            console.log("formato no válido");
             return;
         }
 
         try {
-            console.log('hoa')
+            console.log('hoa');
             let response = await fetch("http://localhost:3000/subirarchivospost", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({fileUrl, fileType, idusers})
+                body: JSON.stringify({ fileUrl, fileType, idusers })
             });
 
             if (response.ok) {
@@ -32,7 +32,6 @@ function manejoDeArchivos(){
         } catch (error) {
             console.log("falla de conexión", error);
         }
-
     });
 
     function tipoDeArchivo(url) {    
@@ -48,15 +47,12 @@ function manejoDeArchivos(){
         return null; 
     }
 
-    tipoDeArchivo();
-
-
-    async function cargarArchivos (idusers) {
+    async function cargarArchivos(idusers) {
         try {
-            const respuesta = await fetch (`http://localhost:3000/subirarchivos/${idusers}`);
+            const respuesta = await fetch(`http://localhost:3000/subirarchivos/${idusers}`);
             const data = await respuesta.json();
             if (respuesta.ok) {
-                console.log('archivos recibidous sir', data);
+                console.log('archivos recibidos:', data);
 
                 renderImages(data.imagenesSubidas);
                 renderVideos(data.videosSubidos);
@@ -75,83 +71,55 @@ function manejoDeArchivos(){
         const galeriadeimagen = document.getElementById('galeriadeimagen');
         galeriadeimagen.innerHTML = '';
 
-        imageLinks?.forEach((link, index) => {
-            if (link.includes('#noGusta')) return;
+        imageLinks?.forEach((link) => {
             const contenedorDeImagen = document.createElement('div');
             const img = document.createElement('img');
-            img.src = link.replace('#gusta','').replace('#noGusta','');
+            img.src = link;
             img.alt = 'imagen subida';
-            img.style.width = '150px'; // cambiar a lo que quiera iair
-
-            const toggleButton = document.createElement('button');
-            toggleButton.textContent = link.includes('#gusta') ? 'No me gusta' : 'Me gusta';
-            toggleButton.onclick = () => toggleLike('imagenesSubidas', index);
+            img.style.width = '150px'; // cambiar a lo que se desee
 
             contenedorDeImagen.appendChild(img);
-            contenedorDeImagen.appendChild(toggleButton);
             galeriadeimagen.appendChild(contenedorDeImagen);
         });
     }
-
-    renderImages();
 
     function renderVideos(videoLinks) {
         const galeriadevideo = document.getElementById('galeriadevideo');
         galeriadevideo.innerHTML = '';
 
-        videoLinks?.forEach((link, index) => {
-            if (link.includes('#noGusta')) return;
+        videoLinks?.forEach((link) => {
             const contenedorDeVideo = document.createElement('div');
             const video = document.createElement('video');
-            video.src = link.replace('#gusta','').replace('#noGusta','');
+            video.src = link;
             video.controls = true;
-            video.style.width = '150px'; // cambiar a lo que quiera iair
-
-            const toggleButton = document.createElement('button');
-            toggleButton.textContent = link.includes('#gusta') ? 'No me gusta' : 'Me gusta';
-            toggleButton.onclick = () => toggleLike('videosSubidos', index);
+            video.style.width = '150px'; // cambiar a lo que se desee
 
             contenedorDeVideo.appendChild(video);
-            contenedorDeVideo.appendChild(toggleButton);
             galeriadevideo.appendChild(contenedorDeVideo);
-            
         });
-
     }
-
-    renderVideos();
 
     function renderAudios(audioLinks) {
         const galeriadeaudio = document.getElementById('galeriadeaudio');
         galeriadeaudio.innerHTML = '';
 
-        audioLinks?.forEach((link, index) => {
-            if (link.includes('#noGusta')) return;
+        audioLinks?.forEach((link) => {
             const contenedorDeAudio = document.createElement('div');
             const audio = document.createElement('audio');
             audio.src = link;
             audio.controls = true;
-            galeriadeaudio.appendChild(audio);
-            
-            const toggleButton = document.createElement('button');
-            toggleButton.textContent = link.includes('#gusta') ? 'No me gusta' : 'Me gusta';
-            toggleButton.onclick = () => toggleLike('audiosSubidos', index);
 
             contenedorDeAudio.appendChild(audio);
-            contenedorDeAudio.appendChild(toggleButton);
             galeriadeaudio.appendChild(contenedorDeAudio);
-
         });
     }
-
-    renderAudios();
 
     async function toggleLike(fileType, fileIndex) {
         try {
             const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({idusers, fileType, fileIndex }), 
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ idusers, fileType, fileIndex })
             });
 
             const data = await respuesta.json();
@@ -160,12 +128,9 @@ function manejoDeArchivos(){
         } catch (error) {
             console.log('error al cambiar de estado entre gusta y no gusta:', error);
         }
-        
-    } 
+    }
 
-    toggleLike();
-
-    function loadUserFiles(idusers){
+    function loadUserFiles(idusers) {
         FetchUserFiles(idusers).then((files) => {
             renderImages(files.imagenesSubidas);
             renderAudios(files.audiosSubidos);
@@ -175,5 +140,6 @@ function manejoDeArchivos(){
 
     loadUserFiles();
 }
-const boton = document.getElementById('enviar')
-boton.addEventListener('click', manejoDeArchivos)
+
+const boton = document.getElementById('enviar');
+boton.addEventListener('click', manejoDeArchivos);

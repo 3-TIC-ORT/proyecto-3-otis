@@ -59,11 +59,12 @@ app.post("/entrarAMiSesion"), async (req, res) => {
         if (!contraseñaVer || !usuarioVer){
             console.log("error al buscar usuario");
         };
-
+        const id400 = 0
         const idBusqueda = await User.findOne({
             where: {
                 contraseña: contraseñaVer,
                 usuario: usuarioVer,
+                idusers: id400
             }
         }); 
 
@@ -76,7 +77,6 @@ app.post("/entrarAMiSesion"), async (req, res) => {
         res.status(500).send('Failed to entrar a mi sesion')
     };
 };
-
 
 
 
