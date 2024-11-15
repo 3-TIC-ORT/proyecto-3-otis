@@ -2,11 +2,11 @@ let sesion = {
     usuario: "",
     contraseña: "",
 };
-document.getElementById("entrar").addEventListener("click", seInicioSesion)
+document.getElementById("botonLogin").addEventListener("click", seInicioSesion)
+
 function seInicioSesion (){
     sesion.usuario = document.getElementById("usuario").value;
    sesion.contraseña = document.getElementById("contraseña").value;
-    postData("inicioSesion", sesion, incorrecto);
     console.log(sesion);
 }
 function incorrecto (){

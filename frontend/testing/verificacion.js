@@ -1,5 +1,6 @@
 function manejoDeArchivos(){
 
+    const idusers = idBusqueda
 
     document.getElementById('subirForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -19,11 +20,12 @@ function manejoDeArchivos(){
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({fileUrl, fileType})
+                body: JSON.stringify({fileUrl, fileType, idusers})
             });
 
             if (response.ok) {
                 console.log("archivo subido");
+                cargarArchivos(idusers);
             } else {
                 console.log("archivo no subido, error");
             }
@@ -67,13 +69,13 @@ function manejoDeArchivos(){
         }
     }
 
-    cargarArchivos();
+    cargarArchivos(idusers);
 
     function renderImages(imageLinks) {
         const galeriadeimagen = document.getElementById('galeriadeimagen');
         galeriadeimagen.innerHTML = '';
 
-        imageLinks.forEach((link, index) => {
+        imageLinks?.forEach((link, index) => {
             if (link.includes('#noGusta')) return;
             const contenedorDeImagen = document.createElement('div');
             const img = document.createElement('img');
@@ -97,7 +99,7 @@ function manejoDeArchivos(){
         const galeriadevideo = document.getElementById('galeriadevideo');
         galeriadevideo.innerHTML = '';
 
-        videoLinks.forEach((link, index) => {
+        videoLinks?.forEach((link, index) => {
             if (link.includes('#noGusta')) return;
             const contenedorDeVideo = document.createElement('div');
             const video = document.createElement('video');
@@ -123,11 +125,11 @@ function manejoDeArchivos(){
         const galeriadeaudio = document.getElementById('galeriadeaudio');
         galeriadeaudio.innerHTML = '';
 
-        audioLinks.forEach((link, index) => {
+        audioLinks?.forEach((link, index) => {
             if (link.includes('#noGusta')) return;
             const contenedorDeAudio = document.createElement('div');
             const audio = document.createElement('audio');
-            audio.scr = link;
+            audio.src = link;
             audio.controls = true;
             galeriadeaudio.appendChild(audio);
             
@@ -149,12 +151,12 @@ function manejoDeArchivos(){
             const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({idusers: 1, fileType, fileIndex }),
+                body: JSON.stringify({idusers, fileType, fileIndex }), 
             });
 
             const data = await respuesta.json();
             console.log(data.message);
-            loadUserFiles(1);
+            cargarArchivos(idusers);
         } catch (error) {
             console.log('error al cambiar de estado entre gusta y no gusta:', error);
         }

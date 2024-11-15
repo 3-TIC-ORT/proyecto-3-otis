@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 import { dirname } from 'path';
 import cors from "cors";
 import { router } from "./rutas.js";
-//import { sendData } from "../frontend/testing/api-login.js";
+import { where } from "sequelize";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -49,10 +49,36 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
 });
 
+app.post("/entrarAMiSesion"), async (req, res) => {
+    try{
+        const { contraseñaVer, usuarioVer } = req.body
 
-app.get("/", async (req, res) => {
-   res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
-});
+        console.log(req.body)
+        console.log(contraseñaVer)
+
+        if (!contraseñaVer || !usuarioVer){
+            console.log("error al buscar usuario");
+        };
+
+        const idBusqueda = await User.findOne({
+            where: {
+                contraseña: contraseñaVer,
+                usuario: usuarioVer,
+            }
+        }); 
+
+        if (idBusqueda) {
+            res.status(200).send('Se encontro, e inicio el user')
+        }
+
+    } catch(error) {
+        console.error("error al chequear usuario:", error);
+        res.status(500).send('Failed to entrar a mi sesion')
+    };
+};
+
+
+
 
 app.get("/login", async (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/entrar.html'));

@@ -1,29 +1,38 @@
  document.addEventListener("DOMContentLoaded", () => {
      const botonLogin = document.getElementById("botonLogin");
-     console.log(botonLogin); 
- });
+     if (botonLogin) {
+        botonLogin.addEventListener("click", iniciarSesion);
+     } else {
+        console.log("botonLogin no encontrado");
+     }
+});
 
 
 async function iniciarSesion() {
-    const usuario = document.getElementById("usuario").value;
-    const contraseña = document.getElementById("contraseña").value;
+    const usuarioVer = document.getElementById("usuario").value;
+    const contraseñaVer = document.getElementById("contraseña").value;
     console.log("intento de inicio de sesión:", usuario);
 
     try {
         const response = await fetch("http://localhost:3000/api/usuarios/login",{
             method: "POST",
-            headers: { "content-type": "application/json"},
-            body: JSON.stringify({usuario, contraseña})
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                usuarioVer, contraseñaVer
+            })
         });
 
         if (response.ok) {
-            console.log("se pudo iniciar sesion eyeyeeyeyeye")
+            console.log("preparado")
         } else {
             const errorText = await response.text();
-            console.log("error en inicio de sesión:", errorText);
+            console.log("error en preparar el inicio de sesión:", errorText);
         } 
+
     }catch (error) {
-            console.log("error de conexion waaaa:", error);
+        console.log("error de conexion waaaa:", error);
     }
 }
 
@@ -31,3 +40,4 @@ async function iniciarSesion() {
 //const btnLogin = document.getElementById("botonLogin");
 console.log(botonLogin); 
 botonLogin.addEventListener("click", iniciarSesion);
+
