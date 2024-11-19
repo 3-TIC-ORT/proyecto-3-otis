@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 import { dirname } from 'path';
 import cors from "cors";
 import { router } from "./rutas.js";
+import { where } from "sequelize";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,10 +49,36 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
 });
 
+app.post("/entrarAMiSesion"), async (req, res) => {
+    try{
+        const { contraseñaVer, usuarioVer } = req.body
 
-app.get("/", async (req, res) => {
-   res.sendFile(path.join(__dirname, '../frontend/testing/index.html'));
-});
+        console.log(req.body)
+        console.log(contraseñaVer)
+
+        if (!contraseñaVer || !usuarioVer){
+            console.log("error al buscar usuario");
+        };
+        const id400 = 0
+        const idBusqueda = await User.findOne({
+            where: {
+                contraseña: contraseñaVer,
+                usuario: usuarioVer,
+                idusers: id400
+            }
+        }); 
+
+        if (idBusqueda) {
+            res.status(200).send('Se encontro, e inicio el user')
+        }
+
+    } catch(error) {
+        console.error("error al chequear usuario:", error);
+        res.status(500).send('Failed to entrar a mi sesion')
+    };
+};
+
+
 
 app.get("/login", async (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/entrar.html'));
@@ -61,8 +88,8 @@ app.get("/subirarchivos", async (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/verificación.html'));
 });
 
-app.post("/subirarchivos", async (req, res) => {
-    
+app.post("/subirarchivospost", async (req, res) => {
+    res.send('hola')
 });
 
 app.post("/login", async (req, res) => {
@@ -71,4 +98,11 @@ app.post("/login", async (req, res) => {
 
 app.listen(3000, () => {
     console.log("servidor escuchando puerto 3000 YUPII");
+});
+
+app.get("/entrar", async (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/Login/pantalla 2 iniciar sesión.html'));
+});
+app.post('/subirarchivospost', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/testing/verificacion.html'));
 });

@@ -1,159 +1,145 @@
-document.getElementById('subirForm').addEventListener('submit', async (e) => {
-e.preventDefault();
+function manejoDeArchivos(){
 
-const fileUrl = document.getElementById('fileUrl').value;
-const fileType = tipoDeArchivo(fileUrl);
+    const idusers = id400
 
-if(!fileType){
-    console.log("formato no valido");
-    return;
-}
+    document.getElementById('subirForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-try {
-    const respuesta = await fetch("http://localhost:3000/subirarchivos", {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({fileUrl, fileType})
-    });
-    if (response.ok) {
-        console.log("archivo subido");
-    } else {
-        console.log("archivo no subido, error");
-    }
-} catch (error) {
-    console.log("falla de conexión", error);
-}
+        const fileUrl = document.getElementById('fileUrl').value;
+        const fileType = tipoDeArchivo(fileUrl);
 
-});
-
-
-function tipoDeArchivo(url) {
-    const esImagen = /\.(jpg|png|gif)$/;
-    const esAudio = /\.(mp3|wav)$/;
-    const esVideo = /\.(mp4)$/;
-
-    if (esImagen.test(url)) return "image";
-    if (esAudio.test(url)) return "audio";
-    if (esVideo.test(url)) return "video";
-    return null;
-
-}
-
-
-
-async function cargarArchivos (idusers) {
-    try {
-        const respuesta = await fetch (`http://localhost:3000/subirarchivos/${idusers}`);
-        const data = await respuesta.json();
-        if (respuesta.ok) {
-            console.log('archivos recibidous sir', data);
-
-            renderImages(data.imagenesSubidas);
-            renderVideos(data.videosSubidos);
-            renderAudios(data.audiosSubidos);
-        } else {
-            console.log("error al cargar archivos", data.message);
+        if (!fileType) {
+            console.log("formato no válido");
+            return;
         }
-    } catch (error) {
-        console.log("error de conexión", error);
+
+        try {
+            console.log('hoa');
+            let response = await fetch("http://localhost:3000/subirarchivospost", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ fileUrl, fileType, idusers })
+            });
+
+            if (response.ok) {
+                console.log("archivo subido");
+                cargarArchivos(idusers);
+            } else {
+                console.log("archivo no subido, error");
+            }
+        } catch (error) {
+            console.log("falla de conexión", error);
+        }
+    });
+
+    function tipoDeArchivo(url) {    
+        const esImagen = /\.(jpg|png|gif)$/i;    
+        const esAudio = /\.(mp3|wav)$/i;    
+        const esVideo = /\.(mp4)$/i;    
+        
+        if (esImagen.test(url)) return "image";    
+        if (esAudio.test(url)) return "audio";    
+        if (esVideo.test(url)) return "video";    
+        
+        console.log("dividido");    
+        return null; 
     }
-}
 
+    async function cargarArchivos(idusers) {
+        try {
+            const respuesta = await fetch(`http://localhost:3000/subirarchivos/${idusers}`);
+            const data = await respuesta.json();
+            if (respuesta.ok) {
+                console.log('archivos recibidos:', data);
 
-function renderImages(imageLinks) {
-    const galeriadeimagen = document.getElementById('galeriadeimagen');
-    galeriadeimagen.innerHTML = '';
+                renderImages(data.imagenesSubidas);
+                renderVideos(data.videosSubidos);
+                renderAudios(data.audiosSubidos);
+            } else {
+                console.log("error al cargar archivos", data.message);
+            }
+        } catch (error) {
+            console.log("error de conexión", error);
+        }
+    }
 
-    imageLinks.forEach((link, index) => {
-        if (link.includes('#noGusta')) return;
-        const contenedorDeImagen = document.createElement('div');
-        const img = document.createElement('img');
-        img.src = link.replace('#gusta','').replace('#noGusta','');
-        img.alt = 'imagen subida';
-        img.style.width = '150px'; // cambiar a lo que quiera iair
+    cargarArchivos(idusers);
 
-        const toggleButton = document.createElement('button');
-        toggleButton.textContent = link.includes('#gusta') ? 'No me gusta' : 'Me gusta';
-        toggleButton.onclick = () => toggleLike('imagenesSubidas', index);
+    function renderImages(imageLinks) {
+        const galeriadeimagen = document.getElementById('galeriadeimagen');
+        galeriadeimagen.innerHTML = '';
 
-        contenedorDeImagen.appendChild(img);
-        contenedorDeImagen.appendChild(toggleButton);
-        galeriadeimagen.appendChild(contenedorDeImagen);
-    });
-}
+        imageLinks?.forEach((link) => {
+            const contenedorDeImagen = document.createElement('div');
+            const img = document.createElement('img');
+            img.src = link;
+            img.alt = 'imagen subida';
+            img.style.width = '150px'; // cambiar a lo que se desee
 
-function renderVideos(videoLinks) {
-    const galeriadevideo = document.getElementById('galeriadevideo');
-    galeriadevideo.innerHTML = '';
-
-    videoLinks.forEach((link, index) => {
-        if (link.includes('#noGusta')) return;
-        const contenedorDeVideo = document.createElement('div');
-        const video = document.createElement('video');
-        video.src = link.replace('#gusta','').replace('#noGusta','');
-        video.controls = true;
-        video.style.width = '150px'; // cambiar a lo que quiera iair
-
-        const toggleButton = document.createElement('button');
-        toggleButton.textContent = link.includes('#gusta') ? 'No me gusta' : 'Me gusta';
-        toggleButton.onclick = () => toggleLike('videosSubidos', index);
-
-        contenedorDeVideo.appendChild(video);
-        contenedorDeVideo.appendChild(toggleButton);
-        galeriadevideo.appendChild(contenedorDeVideo);
-        
-    });
-
-}
-
-function renderAudios(audioLinks) {
-    const galeriadeaudio = document.getElementById('galeriadeaudio');
-    galeriadeaudio.innerHTML = '';
-
-    audioLinks.forEach((link, index) => {
-        if (link.includes('#noGusta')) return;
-        const contenedorDeAudio = document.createElement('div');
-        const audio = document.createElement('audio');
-        audio.scr = link;
-        audio.controls = true;
-        galeriadeaudio.appendChild(audio);
-        
-        const toggleButton = document.createElement('button');
-        toggleButton.textContent = link.includes('#gusta') ? 'No me gusta' : 'Me gusta';
-        toggleButton.onclick = () => toggleLike('audiosSubidos', index);
-
-        contenedorDeAudio.appendChild(audio);
-        contenedorDeAudio.appendChild(toggleButton);
-        galeriadeaudio.appendChild(contenedorDeAudio);
-
-    });
-}
-
-
-async function toggleLike(fileType, fileIndex) {
-    try {
-        const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({idusers: 1, fileType, fileIndex }),
+            contenedorDeImagen.appendChild(img);
+            galeriadeimagen.appendChild(contenedorDeImagen);
         });
-
-        const data = await respuesta.json();
-        console.log(data.message);
-        loadUserFiles(1);
-    } catch (error) {
-        console.log('error al cambiar de estado entre gusta y no gusta:', error);
     }
-    
-} 
 
-function loadUserFiles(idusers){
-    FetchUserFiles(idusers).then((files) => {
-        renderImages(files.imagenesSubidas);
-        renderAudios(files.audiosSubidos);
-        renderVideos(files.videosSubidos);
-    });
+    function renderVideos(videoLinks) {
+        const galeriadevideo = document.getElementById('galeriadevideo');
+        galeriadevideo.innerHTML = '';
+
+        videoLinks?.forEach((link) => {
+            const contenedorDeVideo = document.createElement('div');
+            const video = document.createElement('video');
+            video.src = link;
+            video.controls = true;
+            video.style.width = '150px'; // cambiar a lo que se desee
+
+            contenedorDeVideo.appendChild(video);
+            galeriadevideo.appendChild(contenedorDeVideo);
+        });
+    }
+
+    function renderAudios(audioLinks) {
+        const galeriadeaudio = document.getElementById('galeriadeaudio');
+        galeriadeaudio.innerHTML = '';
+
+        audioLinks?.forEach((link) => {
+            const contenedorDeAudio = document.createElement('div');
+            const audio = document.createElement('audio');
+            audio.src = link;
+            audio.controls = true;
+
+            contenedorDeAudio.appendChild(audio);
+            galeriadeaudio.appendChild(contenedorDeAudio);
+        });
+    }
+
+    async function toggleLike(fileType, fileIndex) {
+        try {
+            const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ idusers, fileType, fileIndex })
+            });
+
+            const data = await respuesta.json();
+            console.log(data.message);
+            cargarArchivos(idusers);
+        } catch (error) {
+            console.log('error al cambiar de estado entre gusta y no gusta:', error);
+        }
+    }
+
+    function loadUserFiles(idusers) {
+        FetchUserFiles(idusers).then((files) => {
+            renderImages(files.imagenesSubidas);
+            renderAudios(files.audiosSubidos);
+            renderVideos(files.videosSubidos);
+        });
+    }
+
+    loadUserFiles();
 }
 
+const boton = document.getElementById('enviar');
+boton.addEventListener('click', manejoDeArchivos);

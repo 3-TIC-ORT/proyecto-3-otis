@@ -28,9 +28,9 @@ router.post('/subirarchivos', async (req, res) => {
     }
 
     try {
-        await modeloArchivos.update(
-            {[field]: fileUrl},
-            {where: {idusers}}
+        await Archivos.update(
+            { [field]: Archivos.sequelize.fn('CONCAT', Archivos.sequelize.col(field), ',', fileUrl) },          
+            { where:{idusers}}
         );
         console.log(`${fileType} subido correctamente`);
         res.status(200).json({message: `${fileType} subido correctamente`});
@@ -96,31 +96,35 @@ router.post('/toggleLike', async (req, res) => {
 
 
 router.post("/login", async (req, res) => {
-    const {usuario, contraseña} = req.body;
+    const { usuario, contraseña } = req.body;
+
     console.log (`intento de inicio de sesión para usuario: ${usuario}`);
 
-    try {
-        const usuarioEncontrado = await User.findOne({ where: { usuario }});
-        if (!usuarioEncontrado) {
-            console.log("Usuario no existe");
-            return res.status(404).send("usuario no existe/no se encontró");
-        }
-        const verificarContraseña = await argon2.verify(usuarioEncontrado.contraseña, contraseña);
-        if (!verificarContraseña){
-            console.log("contraseña incorrecta");
-            return res.status(401).send("contraseña incorrecta :P");
+    try{
+        const { contraseñaVer, usuarioVer } = req.body
+
+        console.log(req.body)
+        console.log(contraseñaVer)
+
+        if (!contraseñaVer || !usuarioVer){
+            console.log("error al buscar usuario");
+        };
+
+        const idBusqueda = await User.findOne({
+            where: {
+                usuario: usuarioVer,
+            }
+        }); 
+
+        if (idBusqueda) {
+            res.status(200).send('Se encontro, e inicio el user')
         }
 
-        console.log("sesión iniciada con exito yay");
-        res.status(200).send("inicio de sesión exitosooo");
-    } catch (error) {
-        console.error("error en el proceso de iniciar sesión:", error);
-        res.status(500).send("error en el servidor");
-    }
+    } catch(error) {
+        console.error("error al chequear usuario:", error);
+        res.status(500).send('Failed to entrar a mi sesion')
+    };
 });
 
-// router.post('/subirarchivos', async (req, res) => {
-//     res.
-// });
 
 export {router};
