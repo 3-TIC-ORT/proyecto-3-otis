@@ -12,20 +12,6 @@ router.post('/subirarchivos', async (req, res) => {
         return res.status(400).json({message: 'datos incompletos'});
     }
 
-    let field;
-    switch (fileType){
-        case 'image': 
-            field = 'imagenesSubidas';
-            break;
-        case 'audio':
-            field = 'audiosSubidos';
-            break;
-        case 'video':
-            field = 'videosSubidos';
-            break;
-        default:
-            return res.status(400).json({message: "tipo de archivo no soportado"});
-    }
 
     try {
         await Archivos.update(
@@ -66,7 +52,7 @@ router.get('/:idusers', async (req, res) => {
     }
 
 });
-
+/* aca  tengo que hacer que vaya a la tabla de gusta o no gusta y sacar los hashtags
 router.post('/toggleLike', async (req, res) => {
     const { idusers, fileType, fileIndex } = req.body;
 
@@ -93,7 +79,7 @@ router.post('/toggleLike', async (req, res) => {
 }
 
 });
-
+*/
 
 router.post("/login", async (req, res) => {
     const { usuario, contraseña } = req.body;
@@ -110,7 +96,7 @@ router.post("/login", async (req, res) => {
             console.log("error al buscar usuario");
         };
 
-        const idBusqueda = await User.findOne({
+        const idBusqueda = await User.findOne({ // comprobar si puedo chequear con el  hasheado esto
             where: {
                 usuario: usuarioVer,
             }
