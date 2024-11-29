@@ -7,7 +7,7 @@ function secreounacuenta (){
     nuevacuenta.usuario = document.getElementById("usuariocreado").value;
     nuevacuenta.contraseña = document.getElementById("contraseñacreada").value;
 }
-fetchData("nuevousuario", repetido);
+fetchData("nuevoUsuario", repetido);
 function repetido(){
   if(data === 0){
     document.getElementById("no").style.opacity = "1";
