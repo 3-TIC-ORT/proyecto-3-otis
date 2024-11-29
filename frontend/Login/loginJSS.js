@@ -6,8 +6,8 @@ document.getElementById("crear").addEventListener("click", secreounacuenta)
 function secreounacuenta (){
     nuevacuenta.usuario = document.getElementById("usuariocreado").value;
     nuevacuenta.contraseña = document.getElementById("contraseñacreada").value;
-    postData("nuevousuario", nuevacuenta, repetido);
 }
+fetchData("nuevousuario", repetido);
 function repetido(){
   if(data === 0){
     document.getElementById("no").style.opacity = "1";

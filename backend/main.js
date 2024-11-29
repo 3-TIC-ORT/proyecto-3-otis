@@ -37,7 +37,7 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
         const hashContraseña = await argon2.hash(contraseñaRegistrada);
         const user = await User.create({
             contraseña: hashContraseña,
-            usuario: usuarioRegistrado
+            usuario: usuarioRegistrado 
         })
 
         res.status(200).send('Se envio el usuario')
@@ -106,3 +106,30 @@ app.get("/entrar", async (req, res) => {
 app.post('/subirarchivospost', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/verificacion.html'));
 });
+ 
+/*
+app.post("/subirarchivos", async (req, res) => { 
+
+    const archivoSubidoAhora = req.body
+    console.log("back: " + JSON.stringify(archivoSubidoAhora));
+
+    const imagenSubidaAhora = manejoDeArchivos.fileURL //poner la variable con lo subido al input
+    const videosSubidosAhora = hdeheudh
+    const audiosSubidosAhora = hbhjghs
+
+    try {
+        const archivoSubidoAhora = await Archivo.create({
+            imagenesSubidas: imagenSubidaAhora,
+            videosSubidos: videosSubidosAhora,
+            audiosSubidosAhora: audiosSubidosAhora,
+        })
+
+        res.status(200).send('Se envio el archivo')
+
+    } catch(error) {
+        console.error('Error al subir el archivo:', error);
+        res.status(500).send('Error en el servidor');
+    }
+
+});
+*/

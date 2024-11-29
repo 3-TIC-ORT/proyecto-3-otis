@@ -1,3 +1,4 @@
+
 function manejoDeArchivos(){
 
     const idusers = id400
@@ -42,8 +43,7 @@ function manejoDeArchivos(){
         if (esImagen.test(url)) return "image";    
         if (esAudio.test(url)) return "audio";    
         if (esVideo.test(url)) return "video";    
-        
-        console.log("dividido");    
+          
         return null; 
     }
 
