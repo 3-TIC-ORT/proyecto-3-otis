@@ -1,4 +1,4 @@
-let sesion = {
+/*let sesion = {
     usuario: "",
     contraseña: "",
 };
@@ -6,9 +6,11 @@ document.getElementById("botonLogin").addEventListener("click", seInicioSesion)
 
 function seInicioSesion (){
     sesion.usuario = document.getElementById("usuario").value;
-   sesion.contraseña = document.getElementById("contraseña").value;
+    sesion.contraseña = document.getElementById("contraseña").value;
     console.log(sesion);
 }
+iniciarSesion();
+/*
 fetchData("inicioSecion", incorrecto);
 function incorrecto (){
     if(data === 0){
@@ -22,3 +24,4 @@ function incorrecto (){
         window.location.href = "../Pantalla6.html"
     }
 }
+    */

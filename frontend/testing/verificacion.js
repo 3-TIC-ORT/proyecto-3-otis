@@ -138,7 +138,7 @@ function manejoDeArchivos(){
         });
     }
 
-    loadUserFiles(); // 6w5tsuiulskw6bhbm JYW3E-AKUUEFPIJA
+    loadUserFiles();
 }
 
 const boton = document.getElementById('enviar');

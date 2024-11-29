@@ -50,14 +50,14 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
 });
 
-app.post("/entrarAMiSesion"), async (req, res) => {
+app.post("/api/usuarios/entrarAMiSesion"), async (req, res) => {
     try{
         const { contraseñaVer, usuarioVer } = req.body
 
         console.log(req.body)
-        const hashContraseñaBuscar = await argon2.hash(contraseñaVer);
-
-        if (!hashContraseñaBuscar || !usuarioVer){
+        
+        const contraseñaValida = await argon2.verify(userBusqueda.contraseña, contraseñaVer);
+        if (!contraseñaValida || !usuarioVer){
             console.log("error al buscar usuario");
         };
         const userBusqueda = await User.findOne({
