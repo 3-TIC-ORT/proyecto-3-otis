@@ -9,6 +9,7 @@ import { dirname } from 'path';
 import cors from "cors";
 import { router } from "./rutas.js";
 import { where } from "sequelize";
+import { Archivos } from "./model/modeloArchivos.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -54,23 +55,25 @@ app.post("/entrarAMiSesion"), async (req, res) => {
         const { contraseñaVer, usuarioVer } = req.body
 
         console.log(req.body)
-        console.log(contraseñaVer)
+        const hashContraseñaBuscar = await argon2.hash(contraseñaVer);
 
-        if (!contraseñaVer || !usuarioVer){
+        if (!hashContraseñaBuscar || !usuarioVer){
             console.log("error al buscar usuario");
         };
-        const id400 = 0
-        const idBusqueda = await User.findOne({
+        const userBusqueda = await User.findOne({
             where: {
-                contraseña: contraseñaVer,
+                contraseña: hashContraseñaBuscar, 
                 usuario: usuarioVer,
-                idusers: id400
             }
-        }); 
+        });
 
-        if (idBusqueda) {
-            res.status(200).send('Se encontro, e inicio el user')
-        }
+        if (userBusqueda) {
+            const idusers = userBusqueda.idusers;}
+            res.status(200).json({ 
+                message: 'Usuario encontrado e iniciado',
+                idusers: idusers 
+            });
+
 
     } catch(error) {
         console.error("error al chequear usuario:", error);
@@ -113,9 +116,9 @@ app.post("/subirarchivos", async (req, res) => {
     const archivoSubidoAhora = req.body
     console.log("back: " + JSON.stringify(archivoSubidoAhora));
 
-    const imagenSubidaAhora = manejoDeArchivos.fileURL //poner la variable con lo subido al input
-    const videosSubidosAhora = hdeheudh
-    const audiosSubidosAhora = hbhjghs
+    const imagenSubidaAhora = manejoDeArchivos.fileURL; 
+    const videosSubidosAhora = manejoDeArchivos.fileURL;
+    const audiosSubidosAhora = manejoDeArchivos.fileURL;
 
     try {
         const archivoSubidoAhora = await Archivo.create({
@@ -132,4 +135,109 @@ app.post("/subirarchivos", async (req, res) => {
     }
 
 });
+*/
+/*
+app.post("/subir-archivo", async (req, res) => {
+
+    const archivoSubido = req.body; 
+    console.log("back: " + JSON.stringify(archivoSubido));
+
+    const { fileUrl, fileType, idusers } = archivoSubido; 
+
+    if (!fileUrl || !fileType || !idusers) {
+        return res.status(400).send('Faltan datos requeridos');
+    }
+
+    let field;
+    switch (fileType) {
+        case 'image':
+            field = 'imagenesSubidas';
+            break;
+        case 'audio':
+            field = 'audiosSubidos';
+            break;
+        case 'video':
+            field = 'videosSubidos';
+            break;
+        default:
+            return res.status(400).send('Tipo de archivo no soportado');
+    }
+
+    try {
+        const archivo = await Archivos.update(
+            {
+                [field]: Archivos.sequelize.fn(
+                    'CONCAT', 
+                    Archivos.sequelize.col(field), 
+                    ',', 
+                    fileUrl
+                )
+            },
+            {
+                where: { idusers } // Actualizar el registro del usuario correspondiente
+            }
+        );
+
+        // Enviar una respuesta exitosa
+        res.status(200).send('Archivo subido correctamente');
+
+    } catch (error) {
+        // Manejo de errores
+        console.error('Error al subir el archivo:', error);
+        res.status(500).send('Error en el servidor');
+    }
+});
+*/
+
+app.post("/subira rchivos", async (req, res) => {
+    const archivoSubido = req.body;
+    console.log("back: " + JSON.stringify(archivoSubido));
+
+    const { fileUrl, fileType, idusers } = archivoSubido;
+    if (!fileUrl || !fileType || !idusers) {
+        return res.status(400).send('Faltan datos requeridos');
+    }
+
+    let field;
+    switch (fileType) {
+        case 'image':
+            field = 'imagenesSubidas';
+            break;
+        case 'audio':
+            field = 'audiosSubidos';
+            break;
+        case 'video':
+            field = 'videosSubidos';
+            break;
+        default:
+            return res.status(400).send('Tipo de archivo no soportado');
+    }
+
+    try {
+        const nuevoArchivo = await Archivos.create({
+            idusers, // cambiar por la variable que termine siendo la del usuario cuando averigue
+            [field]: fileUrl,
+        });
+
+        res.status(201).send('Archivo creado correctamente');
+    } catch (error) {
+        console.error('Error al crear el archivo:', error);
+        res.status(500).send('Error en el servidor');
+    }
+});
+
+
+/*
+
+1. conseguir que el inicio de sesión te de el id y funcione bien
+2. mandarle las variables a iair para que pase de html al siguiente
+3. con el id definido bien mandar a crear los archivos en la tabla 
+4. cuando esten bien para subir archivos clasificarlos en la 3ra tabla de gusta y no gusta
+5. definir que si es no gusta no los muestra
+6. mostrarlos en la galeria
+7. vr si los podemos agrandar para que se vean bien
+8. poner en las de iair el texto de los formatos
+9. corregir ortografía
+10. pasar a la presentación
+
 */
