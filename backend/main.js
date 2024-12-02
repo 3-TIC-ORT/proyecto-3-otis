@@ -226,18 +226,3 @@ app.post("/subira rchivos", async (req, res) => {
     }
 });
 
-
-/*
-
-1. conseguir que el inicio de sesión te de el id y funcione bien
-2. mandarle las variables a iair para que pase de html al siguiente
-3. con el id definido bien mandar a crear los archivos en la tabla 
-4. cuando esten bien para subir archivos clasificarlos en la 3ra tabla de gusta y no gusta
-5. definir que si es no gusta no los muestra
-6. mostrarlos en la galeria
-7. vr si los podemos agrandar para que se vean bien
-8. poner en las de iair el texto de los formatos
-9. corregir ortografía
-10. pasar a la presentación
-
-*/

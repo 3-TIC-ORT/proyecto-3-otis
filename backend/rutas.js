@@ -29,10 +29,10 @@ router.post('/subirarchivos', async (req, res) => {
 
 
 router.get('/:idusers', async (req, res) => {
-    const { idusers } = req.params;
+    const idusers = localStorage.getItem("idusers");
 
     try {
-        const archivosDelUsuario = await modeloArchivos.findOne({where: {idusers}});
+        const archivosDelUsuario = await modeloArchivos.findOne({where: idusers});
         
         if(archivosDelUsuario) {
             console.log('archivos del usuario founded:', archivosDelUsuario);
@@ -82,33 +82,38 @@ router.post('/toggleLike', async (req, res) => {
 */
 
 router.post("/login", async (req, res) => {
-    const { usuario, contraseña } = req.body;
+    const { usuarioVer, contraseñaVer } = req.body;
 
-    console.log (`intento de inicio de sesión para usuario: ${usuario}`);
+    console.log(`Intento de inicio de sesión para usuario: ${usuarioVer}`);
 
     try{
-        const { contraseñaVer, usuarioVer } = req.body
-
-        console.log(req.body)
-        console.log(contraseñaVer)
-
         if (!contraseñaVer || !usuarioVer){
-            console.log("error al buscar usuario");
+            console.log("usuario o contraseña esta vacío >:(");
         };
 
-        const idBusqueda = await User.findOne({ // comprobar si puedo chequear con el  hasheado esto
+        const idBusqueda = await User.findOne({ // para no cagarla dejo idBusqueda pero sirve para buscar el usuario nada mas
             where: {
                 usuario: usuarioVer,
             }
         }); 
 
         if (idBusqueda) {
-            res.status(200).send('Se encontro, e inicio el user')
+            console.log("noloncuentro tu usuario");
+            return res.status(200).json({ message: "no se enconto el usuario", idusers: idBusqueda.id });
         }
+
+        const esContraseñaCorrecta = await argon2.verify(idBusqueda.contraseña, contraseñaVer);
+        if (!esContraseñaCorrecta) {
+            console.log("Contraseña incorrecta nooooou  ");
+            return res.status(401).send('Contraseña incorrecta');
+        }
+
+        console.log("Usuario y contraseña correctos iouuu u u u");
+        return res.status(200).json({ message: "Usuario autenticado correctamente vv", idusers: idBusqueda.id });
 
     } catch(error) {
         console.error("error al chequear usuario:", error);
-        res.status(500).send('Failed to entrar a mi sesion')
+        return res.status(500).send('Failed to entrar a mi sesion')
     };
 });
 

@@ -1,7 +1,7 @@
 
 function manejoDeArchivos(){
 
-    const idusers = id400
+    const idusers = localStorage.getItem('idusers');
 
     document.getElementById('subirForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -11,6 +11,12 @@ function manejoDeArchivos(){
 
         if (!fileType) {
             console.log("formato no válido");
+            document.getElementById("no").style.opacity = "1";
+            document.getElementById("nomensaje").innerHTML = "Formato no válido";
+            setTimeout(() => {
+                document.getElementById("no").style.opacity = "0";
+                document.getElementById("nomensaje").innerHTML = "";
+            }, 3000);
             return;
         }
 
@@ -26,6 +32,13 @@ function manejoDeArchivos(){
 
             if (response.ok) {
                 console.log("archivo subido");
+                await fetch("http://localhost:3000/gusta"),{
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({idusers, archivo: fileUrl, gusta: true})
+                }
                 cargarArchivos(idusers);
             } else {
                 console.log("archivo no subido, error");
@@ -72,14 +85,16 @@ function manejoDeArchivos(){
         galeriadeimagen.innerHTML = '';
 
         imageLinks?.forEach((link) => {
-            const contenedorDeImagen = document.createElement('div');
-            const img = document.createElement('img');
-            img.src = link;
-            img.alt = 'imagen subida';
-            img.style.width = '150px'; // cambiar a lo que se desee
+            if (link.gusta) {
+             const contenedorDeImagen = document.createElement('div');
+              const img = document.createElement('img');
+              img.src = link;
+              img.alt = 'imagen subida';
+              img.style.width = '150px'; // cambiar a lo que se desee
 
-            contenedorDeImagen.appendChild(img);
-            galeriadeimagen.appendChild(contenedorDeImagen);
+             contenedorDeImagen.appendChild(img);
+             galeriadeimagen.appendChild(contenedorDeImagen);
+            }
         });
     }
 
@@ -88,14 +103,16 @@ function manejoDeArchivos(){
         galeriadevideo.innerHTML = '';
 
         videoLinks?.forEach((link) => {
-            const contenedorDeVideo = document.createElement('div');
-            const video = document.createElement('video');
-            video.src = link;
-            video.controls = true;
-            video.style.width = '150px'; // cambiar a lo que se desee
+            if(link.gusta){
+             const contenedorDeVideo = document.createElement('div');
+             const video = document.createElement('video');
+             video.src = link;
+             video.controls = true;
+             video.style.width = '150px'; // cambiar a lo que se desee
 
-            contenedorDeVideo.appendChild(video);
-            galeriadevideo.appendChild(contenedorDeVideo);
+             contenedorDeVideo.appendChild(video);
+             galeriadevideo.appendChild(contenedorDeVideo);
+            }
         });
     }
 
@@ -104,16 +121,37 @@ function manejoDeArchivos(){
         galeriadeaudio.innerHTML = '';
 
         audioLinks?.forEach((link) => {
-            const contenedorDeAudio = document.createElement('div');
-            const audio = document.createElement('audio');
-            audio.src = link;
-            audio.controls = true;
+            if(link.gusta){
+             const contenedorDeAudio = document.createElement('div');
+             const audio = document.createElement('audio');
+             audio.src = link;
+             audio.controls = true;
 
-            contenedorDeAudio.appendChild(audio);
-            galeriadeaudio.appendChild(contenedorDeAudio);
+             contenedorDeAudio.appendChild(audio);
+             galeriadeaudio.appendChild(contenedorDeAudio);
+            }
         });
     }
 
+    async function cambiarGusta(idusers) {
+        const response = await fetch(`http://localhost:3000/cambiarGusta/${idusers}`, {
+            method: 'PUT',
+            headers: { 
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify({ gusta: false })
+        });
+    
+        if (response.ok) {
+            console.log("Gusta cambiado a false");
+        } else {
+            console.log("Error al cambiar estado de gusta");
+        }
+    }
+    }
+   cambiarGusta(idusers);
+   
+   
     async function toggleLike(fileType, fileIndex) {
         try {
             const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
@@ -139,7 +177,7 @@ function manejoDeArchivos(){
     }
 
     loadUserFiles();
-}
+
 
 const boton = document.getElementById('enviar');
 boton.addEventListener('click', manejoDeArchivos);
