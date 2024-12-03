@@ -109,34 +109,30 @@ app.get("/entrar", async (req, res) => {
 app.post('/subirarchivospost', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/verificacion.html'));
 });
- 
-/*
-app.post("/subirarchivos", async (req, res) => { 
+app.post("/subirarchivospost", async (req, res) => {
+    const { fileUrl, fileType, idusers } = req.body;
 
-    const archivoSubidoAhora = req.body
-    console.log("back: " + JSON.stringify(archivoSubidoAhora));
-
-    const imagenSubidaAhora = manejoDeArchivos.fileURL; 
-    const videosSubidosAhora = manejoDeArchivos.fileURL;
-    const audiosSubidosAhora = manejoDeArchivos.fileURL;
-
-    try {
-        const archivoSubidoAhora = await Archivo.create({
-            imagenesSubidas: imagenSubidaAhora,
-            videosSubidos: videosSubidosAhora,
-            audiosSubidosAhora: audiosSubidosAhora,
-        })
-
-        res.status(200).send('Se envio el archivo')
-
-    } catch(error) {
-        console.error('Error al subir el archivo:', error);
-        res.status(500).send('Error en el servidor');
+    let data = {};
+    if (fileType === 'image') {
+        data.image = fileUrl;
+    } else if (fileType === 'audio') {
+        data.audio = fileUrl;
+    } else if (fileType === 'video') {
+        data.video = fileUrl;
     }
 
+    try {
+        const archivo = await Archivo.create({
+            ...data,
+            idusers: idusers
+        });
+        res.status(200).json({ message: 'Archivo subido con éxito', archivo });
+    } catch (error) {
+        console.error('Error al subir archivo:', error);
+        res.status(500).json({ message: 'Error al subir archivo' });
+    }
 });
-*/
-/*
+
 app.post("/subir-archivo", async (req, res) => {
 
     const archivoSubido = req.body; 
@@ -174,22 +170,19 @@ app.post("/subir-archivo", async (req, res) => {
                 )
             },
             {
-                where: { idusers } // Actualizar el registro del usuario correspondiente
+                where: { idusers }
             }
         );
-
-        // Enviar una respuesta exitosa
         res.status(200).send('Archivo subido correctamente');
 
     } catch (error) {
-        // Manejo de errores
         console.error('Error al subir el archivo:', error);
         res.status(500).send('Error en el servidor');
     }
 });
-*/
 
-app.post("/subira rchivos", async (req, res) => {
+
+app.post("/subirarchivos", async (req, res) => {
     const archivoSubido = req.body;
     console.log("back: " + JSON.stringify(archivoSubido));
 
@@ -215,7 +208,7 @@ app.post("/subira rchivos", async (req, res) => {
 
     try {
         const nuevoArchivo = await Archivos.create({
-            idusers, // cambiar por la variable que termine siendo la del usuario cuando averigue
+            idusers, 
             [field]: fileUrl,
         });
 

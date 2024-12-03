@@ -5,28 +5,39 @@ import { Archivos } from "./model/modeloArchivos.js";
 const router = express.Router();
 
 
+
 router.post('/subirarchivos', async (req, res) => {
     const { fileUrl, fileType, idusers } = req.body;
 
-    if (!fileUrl || !fileType || !idusers){
-        return res.status(400).json({message: 'datos incompletos'});
+    if (!fileUrl || !fileType || !idusers) {
+        return res.status(400).json({ message: 'Datos incompletos awwgh' });
     }
 
+    let updateData = {};
+    switch (fileType) {
+        case 'image':
+            updateData = { imagenesSubidas: fileUrl }; 
+            break;
+        case 'audio':
+            updateData = { audiosSubidos: fileUrl };
+            break;
+        case 'video':
+            updateData = { videosSubidos: fileUrl }; 
+            break;
+        default:
+            return res.status(400).json({ message: 'Tipo de archivo no soportado' });
+    }
 
     try {
-        await Archivos.update(
-            { [field]: Archivos.sequelize.fn('CONCAT', Archivos.sequelize.col(field), ',', fileUrl) },          
-            { where:{idusers}}
-        );
-        console.log(`${fileType} subido correctamente`);
-        res.status(200).json({message: `${fileType} subido correctamente`});
+        await Archivos.update(updateData, { where: { idusers } });
+
+        console.log(`${fileType} guardado correctamente en la columna correspondienteee`);
+        res.status(200).json({ message: `${fileType} guardado correctamente` });
     } catch (error) {
-        console.log('error al subir archivo', error);
-        res.status(500).json({message: 'error al subir archivo'});
+        console.error('Error al guardar archivo:', error);
+        res.status(500).json({ message: 'Error al guardar archivo' });
     }
-
 });
-
 
 router.get('/:idusers', async (req, res) => {
     const idusers = localStorage.getItem("idusers");
@@ -52,34 +63,7 @@ router.get('/:idusers', async (req, res) => {
     }
 
 });
-/* aca  tengo que hacer que vaya a la tabla de gusta o no gusta y sacar los hashtags
-router.post('/toggleLike', async (req, res) => {
-    const { idusers, fileType, fileIndex } = req.body;
 
-    try{
-        const archivosDelUsuario = await modeloArchivos.findOne({where: {idusers}});
-        if(!archivosDelUsuario || !archivosDelUsuario[fileType]) {
-            return res.status(404).json({message: 'usuario o archivo no encontrado'});
-        }
-        const fileList = archivosDelUsuario[fileType].split(',');
-        if (!fileList[fileIndex]) {
-            return res.status(404).json({message: 'archivo no encontrado'});
-        }
-
-    fileList[fileIndex] = fileList[fileIndex].includes('#noGusta')
-    ? fileList[fileIndex].replace('#noGusta','#gusta')
-    : fileList[fileIndex].replace('#gusta','#noGusta');
-
-    await modeloArchivos.update({[fileType]: fileList.join(',')}, {where: {idusers}});
-    console.log(`estado de archivo actualizado: ${fileList[fileIndex]}`);
-    res.json({ message: 'estado de archivo actualizado de forma goody :)'});
-} catch (error) {
-    console.log('error al actualizar el estado:', error);
-    res.status(500).json({ message: 'error al actualizar estado del archivououou'});
-}
-
-});
-*/
 
 router.post("/login", async (req, res) => {
     const { usuarioVer, contraseñaVer } = req.body;

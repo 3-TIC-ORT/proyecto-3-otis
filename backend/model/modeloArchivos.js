@@ -20,7 +20,7 @@ const Archivos = sequelize.define("Archivos", {
     type:Sequelize.STRING,
     allowNull: true
     },
-    videosEstablecidos: {    // a partir de aca hay que agregar todo directo a la base de datos tmb
+    videosEstablecidos: {    
     type:Sequelize.STRING,
     allowNull: true
     },
@@ -37,6 +37,6 @@ const Archivos = sequelize.define("Archivos", {
     timestamps: false,
 });
 
-User.hasOne(Archivos, { foreignKey: 'idusers' }); // 
+User.hasMany(Archivos, { foreignKey: 'idusers' }); // 
 
 export { Archivos };

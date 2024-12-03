@@ -9,7 +9,7 @@
 export async function iniciarSesion(sesión) {
     const usuarioVer = document.getElementById("usuario").value;
     const contraseñaVer = document.getElementById("contraseña").value;
-    console.log("intento de inicio de sesión:", usuario);
+    console.log("intento de inicio de sesión:", usuarioVer);
 
     try 
     {

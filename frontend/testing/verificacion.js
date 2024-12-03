@@ -29,17 +29,17 @@ function manejoDeArchivos(){
                 },
                 body: JSON.stringify({ fileUrl, fileType, idusers })
             });
-
             if (response.ok) {
                 console.log("archivo subido");
-                await fetch("http://localhost:3000/gusta"),{
+                await fetch("http://localhost:3000/gusta", { // Sin la coma
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({idusers, archivo: fileUrl, gusta: true})
-                }
+                    body: JSON.stringify({ idusers, archivo: fileUrl, gusta: true })
+                });
                 cargarArchivos(idusers);
+          
             } else {
                 console.log("archivo no subido, error");
             }
@@ -48,16 +48,15 @@ function manejoDeArchivos(){
         }
     });
 
-    function tipoDeArchivo(url) {    
-        const esImagen = /\.(jpg|png|gif)$/i;    
-        const esAudio = /\.(mp3|wav)$/i;    
-        const esVideo = /\.(mp4)$/i;    
-        
-        if (esImagen.test(url)) return "image";    
-        if (esAudio.test(url)) return "audio";    
-        if (esVideo.test(url)) return "video";    
-          
-        return null; 
+    function tipoDeArchivo(fileUrl) {
+        if (fileUrl.match(/\.(jpg|jpeg|png|gif)$/)) {
+            return 'image';
+        } else if (fileUrl.match(/\.(mp3|wav)$/)) {
+            return 'audio';
+        } else if (fileUrl.match(/\.(mp4|mov)$/)) {
+            return 'video';
+        }
+        return 'unknown'; // Si no es un tipo conocido
     }
 
     async function cargarArchivos(idusers) {
@@ -132,7 +131,7 @@ function manejoDeArchivos(){
             }
         });
     }
-
+    /*
     async function cambiarGusta(idusers) {
         const response = await fetch(`http://localhost:3000/cambiarGusta/${idusers}`, {
             method: 'PUT',
@@ -150,24 +149,9 @@ function manejoDeArchivos(){
     }
     }
    cambiarGusta(idusers);
+    */
+}
    
-   
-    async function toggleLike(fileType, fileIndex) {
-        try {
-            const respuesta = await fetch('http://localhost:3000/subirarchivos/toggleLike', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ idusers, fileType, fileIndex })
-            });
-
-            const data = await respuesta.json();
-            console.log(data.message);
-            cargarArchivos(idusers);
-        } catch (error) {
-            console.log('error al cambiar de estado entre gusta y no gusta:', error);
-        }
-    }
-
     function loadUserFiles(idusers) {
         FetchUserFiles(idusers).then((files) => {
             renderImages(files.imagenesSubidas);
