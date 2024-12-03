@@ -109,3 +109,46 @@ width: 30.97%;
 .tdnnn{
     width: 76%;
 }
+#muestraPanico{
+    position: absolute;
+    width: 44%;
+    height: 53%;
+    top: 26%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#tituloMuestraPanico{
+    height: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#tituloMuestraPanico > h3{
+    color: black;
+    font-size: 1.5em;
+    font-style: normal;
+    font-family: initial;
+}
+#eltexto{
+height: 65%;
+width: 100%;
+}
+#cerrrar{
+width: 40%;
+height: 15%;
+background-color: #b13737;
+border-width: 4px;
+border-radius: 20px;
+border-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#cerrrar > p{
+    color: white;
+    font-size: 2em;
+}

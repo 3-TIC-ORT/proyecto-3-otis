@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
-<body class="todo">
+<body class="todo" id="elBody">
     <div class="arriba">
         <div class="sub-arriba">
         <img src="otis.png" alt="otis" class="otislogo">
@@ -29,7 +29,7 @@
     </div>
     </div>
 
-    <div class="otisybotones">
+    <div class="otisybotones" id="otisybotones">
        <a class="tdnnn" href="../frontend/Pantalla6.html"> <button class="menuprinc"> <p>&lt;Volver al menu principal</p></button> </a>
         <div class="contieneotis">
             <img src="otis.png" alt="" class="otishabla">
@@ -68,7 +68,53 @@
     <script>
         document.getElementById("panico").addEventListener("click", relajacion);
         function relajacion (){
-            window.location.href = "relajacion.html";
+            let item = document.createElement("div");
+            item.id = "muestraPanico";
+            document.getElementById("otisybotones").appendChild(item);
+            let itemb = document.createElement("div");
+            itemb.id = "tituloMuestraPanico";
+            document.getElementById("muestraPanico").appendChild(itemb);
+            let itemc = document.createElement("h3");
+            itemc.className = "tituloReal";
+            itemc.textContent = "Como ayudar durente un episodio de de ansiedad o enojo";
+            document.getElementById("tituloMuestraPanico").appendChild(itemc);
+            let otroitem = document.createElement("div");
+            otroitem.id = "eltexto";
+            document.getElementById("muestraPanico").appendChild(otroitem);
+            let itemd1 = document.createElement("li")
+            itemd1.className = "instrucciones";
+            itemd1.textContent = "Guarda la calma, desesperarte puede desesperar aún más a la otra persona";
+            document.getElementById("eltexto").appendChild(itemd1);
+            let itemd2 = document.createElement("li")
+            itemd2.className = "instrucciones";
+            itemd2.textContent = "dentifica el origen del episodio y si es posible detenlo. Si están en un entorno con mucho ruido, luz o una propensidad alta a sobreestimular, intenta sacarlo del lugar o distraerlo para que deje de ser afectado a gran escala.";
+            document.getElementById("eltexto").appendChild(itemd2);
+            let itemd3 = document.createElement("li")
+            itemd3.className = "instrucciones";
+            itemd3.textContent = "Analiza si crees que pueda solo o no, y dependiendo de eso dale su espacio y acompañalo en silencio o ayudalo de las formas debidas.";
+            document.getElementById("eltexto").appendChild(itemd3);
+            let itemd4 = document.createElement("li")
+            itemd4.className = "instrucciones";
+            itemd4.textContent = "Intenta comunicarte, anima al otro a expresar cómo se siente siempre afrontando la situación con paciencia. Recuerda que esto no es fácil para todos, dale tiempo y no lo juzgues.";
+            document.getElementById("eltexto").appendChild(itemd4);
+            let itemd5 = document.createElement("li")
+            itemd5.className = "instrucciones";
+            itemd5.textContent = "Si tienes la posibilidad, ofrece un apoyo visual para mejorar su forma de comunicarse y para distraerlo.";
+            document.getElementById("eltexto").appendChild(itemd5);
+            let itemd6 = document.createElement("li")
+            itemd6.className = "instrucciones";
+            itemd6.textContent = "Si le sirve, un abrazo o ejercer presión puede brindar confort en estas situaciones.";
+            document.getElementById("eltexto").appendChild(itemd6);
+            let iteme = document.createElement("button");
+            iteme.id = "cerrrar";
+            document.getElementById("muestraPanico").appendChild(iteme);
+            let itemf = document.createElement("p");
+            itemf.textContent = "cerrar";
+            document.getElementById("cerrrar").appendChild(itemf);
+            document.getElementById("cerrrar").addEventListener("click", cierroCosa);
+        }
+        function cierroCosa(){
+            document.getElementById("muestraPanico").remove();
         }
     </script>
 </body>
