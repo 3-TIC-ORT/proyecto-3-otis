@@ -81,7 +81,7 @@ router.post("/login", async (req, res) => {
             }
         }); 
 
-        if (idBusqueda) {
+        if (!idBusqueda) {
             console.log("noloncuentro tu usuario");
             return res.status(200).json({ message: "no se enconto el usuario", idusers: idBusqueda.id });
         }
@@ -93,7 +93,7 @@ router.post("/login", async (req, res) => {
         }
 
         console.log("Usuario y contraseña correctos iouuu u u u");
-        return res.status(200).json({ message: "Usuario autenticado correctamente vv", idusers: idBusqueda.id });
+        return res.status(200).json({ message: "Usuario autenticado correctamente vv", idusers: idBusqueda.idusers });
 
     } catch(error) {
         console.error("error al chequear usuario:", error);
