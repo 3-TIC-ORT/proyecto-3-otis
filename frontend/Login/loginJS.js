@@ -9,7 +9,7 @@ function seInicioSesion (){
    sesion.contraseña = document.getElementById("contraseña").value;
     console.log(sesion);
 }
-fetchData("inicioSecion", incorrecto);
+//fetchData("inicioSecion", incorrecto);//
 function incorrecto (){
     if(data === 0){
     document.getElementById("no").style.opacity = "1";
