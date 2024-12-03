@@ -50,14 +50,14 @@ app.post("/enviar-datos", async (req, res) => { // endpoint
 
 });
 
-app.post("/entrarAMiSesion"), async (req, res) => {
+app.post("/api/usuarios/entrarAMiSesion"), async (req, res) => {
     try{
         const { contraseñaVer, usuarioVer } = req.body
 
         console.log(req.body)
-        const hashContraseñaBuscar = await argon2.hash(contraseñaVer);
-
-        if (!hashContraseñaBuscar || !usuarioVer){
+        
+        const contraseñaValida = await argon2.verify(userBusqueda.contraseña, contraseñaVer);
+        if (!contraseñaValida || !usuarioVer){
             console.log("error al buscar usuario");
         };
         const userBusqueda = await User.findOne({
@@ -109,34 +109,30 @@ app.get("/entrar", async (req, res) => {
 app.post('/subirarchivospost', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/testing/verificacion.html'));
 });
- 
-/*
-app.post("/subirarchivos", async (req, res) => { 
+app.post("/subirarchivospost", async (req, res) => {
+    const { fileUrl, fileType, idusers } = req.body;
 
-    const archivoSubidoAhora = req.body
-    console.log("back: " + JSON.stringify(archivoSubidoAhora));
-
-    const imagenSubidaAhora = manejoDeArchivos.fileURL; 
-    const videosSubidosAhora = manejoDeArchivos.fileURL;
-    const audiosSubidosAhora = manejoDeArchivos.fileURL;
-
-    try {
-        const archivoSubidoAhora = await Archivo.create({
-            imagenesSubidas: imagenSubidaAhora,
-            videosSubidos: videosSubidosAhora,
-            audiosSubidosAhora: audiosSubidosAhora,
-        })
-
-        res.status(200).send('Se envio el archivo')
-
-    } catch(error) {
-        console.error('Error al subir el archivo:', error);
-        res.status(500).send('Error en el servidor');
+    let data = {};
+    if (fileType === 'image') {
+        data.image = fileUrl;
+    } else if (fileType === 'audio') {
+        data.audio = fileUrl;
+    } else if (fileType === 'video') {
+        data.video = fileUrl;
     }
 
+    try {
+        const archivo = await Archivo.create({
+            ...data,
+            idusers: idusers
+        });
+        res.status(200).json({ message: 'Archivo subido con éxito', archivo });
+    } catch (error) {
+        console.error('Error al subir archivo:', error);
+        res.status(500).json({ message: 'Error al subir archivo' });
+    }
 });
-*/
-/*
+
 app.post("/subir-archivo", async (req, res) => {
 
     const archivoSubido = req.body; 
@@ -174,22 +170,19 @@ app.post("/subir-archivo", async (req, res) => {
                 )
             },
             {
-                where: { idusers } // Actualizar el registro del usuario correspondiente
+                where: { idusers }
             }
         );
-
-        // Enviar una respuesta exitosa
         res.status(200).send('Archivo subido correctamente');
 
     } catch (error) {
-        // Manejo de errores
         console.error('Error al subir el archivo:', error);
         res.status(500).send('Error en el servidor');
     }
 });
-*/
 
-app.post("/subira rchivos", async (req, res) => {
+
+app.post("/subirarchivos", async (req, res) => {
     const archivoSubido = req.body;
     console.log("back: " + JSON.stringify(archivoSubido));
 
@@ -215,7 +208,7 @@ app.post("/subira rchivos", async (req, res) => {
 
     try {
         const nuevoArchivo = await Archivos.create({
-            idusers, // cambiar por la variable que termine siendo la del usuario cuando averigue
+            idusers, 
             [field]: fileUrl,
         });
 
@@ -226,18 +219,3 @@ app.post("/subira rchivos", async (req, res) => {
     }
 });
 
-
-/*
-
-1. conseguir que el inicio de sesión te de el id y funcione bien
-2. mandarle las variables a iair para que pase de html al siguiente
-3. con el id definido bien mandar a crear los archivos en la tabla 
-4. cuando esten bien para subir archivos clasificarlos en la 3ra tabla de gusta y no gusta
-5. definir que si es no gusta no los muestra
-6. mostrarlos en la galeria
-7. vr si los podemos agrandar para que se vean bien
-8. poner en las de iair el texto de los formatos
-9. corregir ortografía
-10. pasar a la presentación
-
-*/

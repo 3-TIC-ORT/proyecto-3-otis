@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <button class="panico">
+        <button class="panico" id="panico">
             <img src="botoncito de panico.png" alt="">
             <div>
           <p>Boton de panico</p>
@@ -65,5 +65,11 @@
             <p>Relajacion</p>
        </button></a>
     </div>
+    <script>
+        document.getElementById("panico").addEventListener("click", relajacion);
+        function relajacion (){
+            window.location.href = "relajacion.html";
+        }
+    </script>
 </body>
 </html>
