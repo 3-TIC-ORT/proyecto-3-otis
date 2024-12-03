@@ -2,6 +2,11 @@
 function manejoDeArchivos(){
 
     const idusers = localStorage.getItem('idusers');
+    if (idusers === 'default_user') {
+    console.error('El ai di del usuario no se encontró en localStorage.');
+    } else if (idusers) {
+    loadUserFiles(idusers);
+    }
 
     document.getElementById('subirForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -152,7 +157,25 @@ function manejoDeArchivos(){
     */
 }
    
+async function FetchUserFiles(idusers) {
+    try {
+        const response = await fetch(`http://localhost:3000/subirarchivos/${idusers}`);
+        if (response.ok) {
+            return await response.json();
+        } else {
+            console.error("Error al obtener los archivos:", response.statusText);
+            return { imagenesSubidas: [], videosSubidos: [], audiosSubidos: [] };
+        }
+    } catch (error) {
+        console.error("Error de conexión:", error);
+        return { imagenesSubidas: [], videosSubidos: [], audiosSubidos: [] };
+    }
+}
     function loadUserFiles(idusers) {
+        if (!idusers) {
+            console.error('El ID de usuario no es válido.');
+            return;
+        }
         FetchUserFiles(idusers).then((files) => {
             renderImages(files.imagenesSubidas);
             renderAudios(files.audiosSubidos);

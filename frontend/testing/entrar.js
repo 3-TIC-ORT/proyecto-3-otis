@@ -42,6 +42,7 @@ export async function iniciarSesion(sesión) {
             const contentType = response.headers.get("content-type");
             if (contentType && contentType.includes("application/json")) {
                 const data = await response.json();
+                console.log(data)
                 console.log("Usuario encontrado, ID de usuario:", data.idusers);
                 if (data.idusers) {
                     const idusers = data.idusers;
