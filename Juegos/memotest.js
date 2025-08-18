@@ -2,6 +2,7 @@ let srci = ["memotestA", "memotestB", "memotestC", "memotestD", "memotestE", "me
 let completasurs = "1.PNG";
 let segundalista = [];
 let botonesquenodebepasarnadasoselostoca = [];
+let partida = 1
 for(let i=srci.length-1; i > 0; i--){
     let j = Math.floor(Math.random()*(i+1));
     let t = srci[i]; 
@@ -73,10 +74,13 @@ function srcreal(){
             }
         } else{
             document.getElementById("dialogo").innerHTML = "¡Oh no! Intenta de nuevo"
+            let jhghjgggjhg = partida
             setTimeout(() => {
-                document.getElementsByClassName("signodepregunta")[le].src = "signodepregunta.png";
-                priloultimo.src = "signodepregunta.png";
-                bloqueador2 = 0;
+                if(jhghjgggjhg === partida){
+                    document.getElementsByClassName("signodepregunta")[le].src = "signodepregunta.png";
+                    priloultimo.src = "signodepregunta.png";
+                    bloqueador2 = 0;
+                }
             }, 1000);  
         }
          turnos = 1;
@@ -92,6 +96,7 @@ ultimobloqueador = 0;
 document.getElementById("volverajugar").addEventListener("click", volverajugar);
 function volverajugar(){
     turnos = 1;
+    partida++
     primagen = "¿?";
     priboton = "¿?";
      priloultimo = "¿?";
@@ -103,7 +108,7 @@ function volverajugar(){
         document.getElementById(`imagen${LETm+1}`).src = "signodepregunta.png";
         document.getElementById(`boton${LETm+1}`).style.opacity = "1";
      }
-     document.getElementById("dialogo").innerHTML = "Intenta de levantar la maxima cantidad de iguales en el minimo tiempo posible"
+     document.getElementById("dialogo").innerHTML = "Intenta de levantar la maxima cantidad de pares iguales en el minimo tiempo posible"
      segundalista = [];
     for(let i=srci.length-1; i > 0; i--){
          let j = Math.floor(Math.random()*(i+1));
